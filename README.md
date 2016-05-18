@@ -1,6 +1,6 @@
 # $$\LeTeX$$ Template For NPU thesis
 
-![Platfrom](https://img.shields.io/badge/CTeX-v2.9.2.164-bb92ac.svg)
+![Platfrom](https://img.shields.io/badge/CTeX-v2.9.2.164-3D6117.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
 
