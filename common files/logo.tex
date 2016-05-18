@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+    \draw[line width=0.10cm] (0, 0) circle (2.0cm);
+    \draw[line width=0.05cm] (0, 0) circle (1.3cm);
+    \fill[gray!15] (0, 0) circle (1.3cm);
+    \fill[white] (0, 0) circle (0.9cm);
+    \draw[line width=0.05cm] (0, 0) circle (0.9cm);
+    \fill[black] (-0.50, -0.73) .. controls (-0.35, -0.81) ..
+        (-0.2, -0.80) .. controls (0.15, -0.70) and (0.20, -0.60) .. 
+        (0.35, -0.35) .. controls (0.42, -0.24) and (0.60, -0.26) ..
+        (0.60, -0.40) .. controls (0.58, -0.50) and (0.49, -0.50) ..
+        (0.45, -0.45) .. controls (0.40, -0.68) and (0.75, -0.70) ..
+        (0.90, 0.00) arc (360:250:0.9cm);
+    \fill (-0.40, -0.40)--(-1.33, -0.40)--(1.00, 1.10)--cycle;
+    \fill (-0.37, -0.43)--(-0.20, -0.80)--(1.01, 1.05)--cycle;
+    
+    \foreach \x/\txt in {0/N, 1/O, 2/R, 3/T, 4/H, 5/W, 6/E, 7/S, 8/T, 9/E, 10/R, 11/N, 12/~, 13/P, 14/O, 15/L, 16/Y, 17/T, 18/E, 19/C, 20/H, 21/N, 22/I, 23/C, 24/A, 25/L, 26/~, 27/U, 28/N, 29/I, 30/V, 31/E, 32/R, 33/S, 34/I, 35/T, 36/Y}
+    {
+        \node[scale=0.7, rotate=\x*-6.50-245] at (207+\x*-6.50:1.6cm) {\txt};
+    };
+
+    \foreach \x/\txt in {0/西, 1/北, 2/工, 3/业, 4/大, 5/学}
+    {
+        \node[scale=1.25, rotate=\x*18-50] at (225+\x*18:1.65cm) {\fNWPU\txt};
+    };
+
+    \foreach \x/\txt in {0/1, 1/9, 2/3, 3/8}
+    {
+        \node[scale=1, rotate=\x*18-25] at (\x*18-115:1.1cm) {\bfseries\txt};
+    };
+\end{tikzpicture}
+
+\endinput
+% 这是西北工业大学校徽文件，不能单独编译。
