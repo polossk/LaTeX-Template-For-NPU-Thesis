@@ -5,12 +5,12 @@
 
 ## Usage
 1. 安装 `common files` 中的字体
-2. 将 'common files'中的文件与模板文件一起拷贝到工作目录中
+2. 将 `common files` 中的文件与模板文件一起拷贝到工作目录中
 3. 在 `\begin{document}` 前引用 `\input{thesis-setting}`
 4. Enjoy
 
 ## Note
-1. 本模板使用的是Adobe字体，需要另行购买或下载
+1. 本模板使用的是Adobe字体(宋体，黑体，楷体，仿宋)，需要另行购买或下载
 2. 所有字体大小的控制命令统一前缀为`s(a.k.a size)`
 3. 所有字体格式的控制命令统一前缀为`f(a.k.a font)`
 4. 校徽用`tikz`生成矢量图形
