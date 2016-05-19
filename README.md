@@ -1,5 +1,4 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-# $\LaTex$ Template For NPU thesis
+# LaTeX Template For NPU thesis
 ![Platfrom](https://img.shields.io/badge/CTeX-v2.9.2.164-3D6117.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
@@ -8,7 +7,7 @@
 1. 安装 `common files` 中的字体
 2. 将 'common files'中的文件与模板文件一起拷贝到工作目录中
 3. 在 `\begin{document}` 前引用 `\input{thesis-setting}`
-4. Enjoy $\LaTeX$ing.
+4. Enjoy ![LaTeX](common files/LaTeX.gif)ing.
 
 ## Note
 1. 本模板使用的是Adobe字体，需要另行购买或下载
