@@ -7,7 +7,7 @@
 1. 安装 `common files` 中的字体
 2. 将 'common files'中的文件与模板文件一起拷贝到工作目录中
 3. 在 `\begin{document}` 前引用 `\input{thesis-setting}`
-4. Enjoy ![LaTeX](common files/LaTeX.gif)ing.
+4. Enjoy
 
 ## Note
 1. 本模板使用的是Adobe字体，需要另行购买或下载
