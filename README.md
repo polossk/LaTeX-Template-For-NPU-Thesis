@@ -1,5 +1,4 @@
-# $$\LeTeX$$ Template For NPU thesis
-
+# LaTeX Template For NPU thesis
 ![Platfrom](https://img.shields.io/badge/CTeX-v2.9.2.164-3D6117.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
@@ -8,7 +7,24 @@
 1. 安装 `common files` 中的字体
 2. 将 'common files'中的文件与模板文件一起拷贝到工作目录中
 3. 在 `\begin{document}` 前引用 `\input{thesis-setting}`
-4. Enjoy $$\LaTeX$$ing.
+4. Enjoy
+
+## Note
+1. 本模板使用的是Adobe字体，需要另行购买或下载
+2. 所有字体大小的控制命令统一前缀为`s(a.k.a size)`
+3. 所有字体格式的控制命令统一前缀为`f(a.k.a font)`
+4. 校徽用`tikz`生成矢量图形
+5. 额外制作了西北工业大学的标题的特殊字体
+6. 如有任何问题，请发[issue](https://github.com/polossk/LeTeX-Template-For-NPU-Thesis/issues/new)
+7. 基于[MIT-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
+```bibtex
+@misc{NWPUThesisLaTeXTemplate,
+    title={LeTeX-Template-For-NPU-Thesis},
+    author={Shangkun Shen},
+    year={2016},
+    month={05}
+}
+```
 
 ## Copyright
 Use this code whatever you want, under the circumstances of acknowleged the mit license this page below. Star this repository if you like, and it will be very generous of you!
