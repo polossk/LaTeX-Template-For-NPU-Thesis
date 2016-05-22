@@ -139,6 +139,7 @@
 
 %---------------------------------设置引用格式---------------------------------%
 \renewcommand\figureautorefname{图}
+\renewcommand\tableautorefname{表}
 \newcommand\myreference[1]{[\ref{#1}]}
 \renewcommand\theequation{\arabic{equation}}
 % 增加 \ucite 命令使显示的引用为上标形式
@@ -171,8 +172,8 @@
 %----------------------------设置段落标题与目录格式----------------------------%
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
-\titleformat{\chapter}[hang] {\normalfont\sSanhao\filcenter\fHei\sf}
-    {\sSanhao{\chaptertitlename}} {20pt}{\sSanhao}
+
+
 % 正文中标题格式，毋需标号
 % \titleformat{\section}[hang]{\fHei \sf \sSihao}
 %     {\sSihao }{0.5em}{}{}
@@ -181,6 +182,16 @@
 % \titleformat{\subsubsection}[hang]{\fHei \sf}
 %     {\thesubsubsection }{0.5em}{}{}
 % 正文中标题格式，需要标号
+
+\renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\bibname}{参考文献}
+\renewcommand{\contentsname}{目~录}
+\newcommand{\keywords}[1]{\\ \\ \textbf{关~键~词}：#1}
+
+\titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\sf}
+    {\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
 \titleformat{\section}[hang]{\fHei \sf \sSihao}
     {\sSihao \thesection}{0.5em}{}{}
 \titleformat{\subsection}[hang]{\fHei \sf \sHalfXiaosi}
@@ -212,8 +223,8 @@
 \makeatletter
 \renewcommand{\headrule}{%
     {
-        \if@fancyplain\let\headrulewidth\plainheadrulewidth
-        \fi\makeheadrule
+        \if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+        \makeheadrule
     }
 }
 \pagestyle{fancyplain}
@@ -225,6 +236,7 @@
 
 
 %-------------------------------数学符号格式控制-------------------------------%
+\usepackage{bm}
 \def\mathbi#1{\textbf{\em #1}}
 % Caligraphic letters:      \mathcal{A}
 % Mathbb letters:           \mathbb{A}
@@ -238,6 +250,7 @@
 %-------------------------------数学特殊符号控制-------------------------------%
 \newcommand\mi{\mathrm{i}}      % constant i
 \newcommand\me{\mathrm{e}}      % constant e
+\newcommand\mvx{\bm{x}}         % vector x
 \DeclareMathOperator\diff{d\!}  % diff operator
 \DeclareMathOperator\Diff{D\!}  % Diff operator
 \DeclareMathOperator\lcm{lcm}   % lcm operator
