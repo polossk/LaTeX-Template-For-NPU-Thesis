@@ -11,12 +11,13 @@
 
 ## Note
 1. 本模板使用的是Adobe字体(宋体，黑体，楷体，仿宋)，需要另行购买或下载
-2. 所有字体大小的控制命令统一前缀为`s(a.k.a size)`
-3. 所有字体格式的控制命令统一前缀为`f(a.k.a font)`
-4. 校徽用`tikz`生成矢量图形
-5. 额外制作了西北工业大学的标题的特殊字体
-6. 如有任何问题，请发[issue](https://github.com/polossk/LeTeX-Template-For-NPU-Thesis/issues/new)
-7. 基于[MIT-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
+2. 添加了论文例子，所有文件集合到了`example`文件夹中
+3. 所有字体大小的控制命令统一前缀为`s(a.k.a size)`
+4. 所有字体格式的控制命令统一前缀为`f(a.k.a font)`
+5. 校徽用`tikz`生成矢量图形
+6. 额外制作了西北工业大学的标题的特殊字体
+7. 如有任何问题，请发[issue](https://github.com/polossk/LeTeX-Template-For-NPU-Thesis/issues/new)
+8. 基于[MIT-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
 ```bibtex
 @misc{NWPUThesisLaTeXTemplate,
     title={LaTeX-Template-For-NPU-Thesis},
