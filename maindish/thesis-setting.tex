@@ -27,7 +27,7 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{layouts}
-\usepackage{cite}
+\usepackage[numbers,sort&compress]{natbib}
 %------------------------------------------------------------------------------%
 
 
@@ -140,8 +140,9 @@
 %---------------------------------设置引用格式---------------------------------%
 \renewcommand\figureautorefname{图}
 \renewcommand\tableautorefname{表}
+\renewcommand\equationautorefname{式}
 \newcommand\myreference[1]{[\ref{#1}]}
-\renewcommand\theequation{\arabic{equation}}
+\renewcommand\theequation{\thechapter.\arabic{equation}}
 % 增加 \ucite 命令使显示的引用为上标形式
 \newcommand{\ucite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
 %------------------------------------------------------------------------------%
@@ -164,6 +165,7 @@
     \parindent\CJKtwospaces
 }
 \renewcommand\contentsname{目~~~~录}
+\renewcommand\chaptername{\CJKprechaptername\CJKthechapter\CJKchaptername}
 \setlength{\parskip}{3pt plus1pt minus1pt} % 段落间距
 \renewcommand{\baselinestretch}{1.25} % 行距
 %------------------------------------------------------------------------------%
@@ -190,13 +192,13 @@
 \renewcommand{\contentsname}{目~录}
 \newcommand{\keywords}[1]{\\ \\ \textbf{关~键~词}：#1}
 
-\titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\sf}
+\titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\bf}
     {\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
-\titleformat{\section}[hang]{\fHei \sf \sSihao}
+\titleformat{\section}[hang]{\fHei \bf \sSihao}
     {\sSihao \thesection}{0.5em}{}{}
-\titleformat{\subsection}[hang]{\fHei \sf \sHalfXiaosi}
+\titleformat{\subsection}[hang]{\fHei \bf \sHalfXiaosi}
     {\sHalfXiaosi \thesubsection}{0.5em}{}{}
-\titleformat{\subsubsection}[hang]{\fHei \sf}
+\titleformat{\subsubsection}[hang]{\fHei \bf}
     {\thesubsubsection }{0.5em}{}{}
 % 目录格式
 \titlespacing{\chapter}{0pt}{-3ex  plus .1ex minus .2ex}{0.25em}
@@ -248,13 +250,26 @@
 
 
 %-------------------------------数学特殊符号控制-------------------------------%
-\newcommand\mi{\mathrm{i}}      % constant i
-\newcommand\me{\mathrm{e}}      % constant e
-\newcommand\mvx{\bm{x}}         % vector x
-\DeclareMathOperator\diff{d\!}  % diff operator
-\DeclareMathOperator\Diff{D\!}  % Diff operator
-\DeclareMathOperator\lcm{lcm}   % lcm operator
-\DeclareMathOperator*{\argmin}{argmin} % argmin operator
+\newcommand\mi{{\mathrm i}}             % constant i
+\newcommand\me{{\mathrm e}}             % constant e
+\newcommand\mreal{{\mathbb R}}          % constant real set R
+\newcommand\mcond{{\mathrm{Cond.}}}     % condition symbol
+\newcommand\mvu{{\bm u}}                % vector u
+\newcommand\mvv{{\bm v}}                % vector v
+\newcommand\mvw{{\bm w}}                % vector w
+\newcommand\mvx{{\bm x}}                % vector x
+\newcommand\mvy{{\bm y}}                % vector y
+\newcommand\mvz{{\bm z}}                % vector z
+\newcommand\mma{{\mathbf A}}            % matrix A
+\newcommand\mmi{{\mathbf I}}            % matrix I
+\newcommand\mms{{\mathbf S}}            % matrix S
+\newcommand\mmw{{\mathbf W}}            % matrix W
+\newcommand\mmwt{{\mathbf{W}^T}}        % matrix W^T
+\DeclareMathOperator\diff{d\!}          % operator diff
+\DeclareMathOperator\Diff{D\!}          % operator Diff
+\DeclareMathOperator\lcm{lcm}           % operator lcm
+\DeclareMathOperator\tr{tr}             % operator lcm
+\DeclareMathOperator*{\argmin}{argmin}  % operator argmin
 \allowdisplaybreaks[4]
 %------------------------------------------------------------------------------%
 
