@@ -111,24 +111,14 @@
 
 
 %------------------------------添加插图与表格控制------------------------------%
-\usepackage{graphics}
-\usepackage{subfigure}
-\usepackage{epsfig}
-\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[font=small,labelsep=quad]{caption}
 \usepackage{wrapfig}
-\usepackage{rotating}
-\usepackage{multirow}
+\usepackage{multirow,makecell}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{setspace}
-\renewcommand{\captionfont}{\CJKfamily{song}\rmfamily}
-\renewcommand{\captionlabelfont}{\CJKfamily{song}\rmfamily}
-% 去掉图表号后面的:
-% 图表标题字体为11pt, 这里写作大五号
-\renewcommand{\captionfont}{\sLargeWuhao}
-% 定义缩放标准
-\def\gs{1.0}
 %------------------------------------------------------------------------------%
 
 
@@ -143,6 +133,7 @@
 \renewcommand\tableautorefname{表}
 \renewcommand\equationautorefname{式}
 \newcommand\myreference[1]{[\ref{#1}]}
+\newcommand\eqrefe[1]{式(\ref{#1})}
 \renewcommand\theequation{\thechapter.\arabic{equation}}
 % 增加 \ucite 命令使显示的引用为上标形式
 \newcommand{\ucite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
@@ -152,6 +143,7 @@
 %--------------------------------设置定理类环境--------------------------------%
 \usepackage[amsmath,thmmarks]{ntheorem}
 \newtheorem{myexample}{例}
+\newtheorem{thm}{定理}
 %------------------------------------------------------------------------------%
 
 
