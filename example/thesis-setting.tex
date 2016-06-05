@@ -28,6 +28,7 @@
 \usepackage{tikz}
 \usepackage{layouts}
 \usepackage[numbers,sort&compress]{natbib}
+\usepackage{clrscode}
 %------------------------------------------------------------------------------%
 
 
@@ -110,24 +111,14 @@
 
 
 %------------------------------添加插图与表格控制------------------------------%
-\usepackage{graphics}
-\usepackage{subfigure}
-\usepackage{epsfig}
-\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[font=small,labelsep=quad]{caption}
 \usepackage{wrapfig}
-\usepackage{rotating}
-\usepackage{multirow}
+\usepackage{multirow,makecell}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{setspace}
-\renewcommand{\captionfont}{\CJKfamily{song}\rmfamily}
-\renewcommand{\captionlabelfont}{\CJKfamily{song}\rmfamily}
-% 去掉图表号后面的:
-% 图表标题字体为11pt, 这里写作大五号
-\renewcommand{\captionfont}{\sLargeWuhao}
-% 定义缩放标准
-\def\gs{1.0}
 %------------------------------------------------------------------------------%
 
 
@@ -142,6 +133,7 @@
 \renewcommand\tableautorefname{表}
 \renewcommand\equationautorefname{式}
 \newcommand\myreference[1]{[\ref{#1}]}
+\newcommand\eqrefe[1]{式(\ref{#1})}
 \renewcommand\theequation{\thechapter.\arabic{equation}}
 % 增加 \ucite 命令使显示的引用为上标形式
 \newcommand{\ucite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
@@ -151,6 +143,7 @@
 %--------------------------------设置定理类环境--------------------------------%
 \usepackage[amsmath,thmmarks]{ntheorem}
 \newtheorem{myexample}{例}
+\newtheorem{thm}{定理}
 %------------------------------------------------------------------------------%
 
 
@@ -158,12 +151,8 @@
 \XeTeXlinebreaklocale "zh"       %使用中文的换行风格
 \XeTeXlinebreakskip = 0pt plus 1pt    %调整换行逻辑的弹性大小
 \xeCJKcaption{gb_452}
-\newlength \CJKtwospaces
-
-\def\CJKindent{
-    \settowidth\CJKtwospaces{\CJKchar{"0A1}{"0A1}\CJKchar{"0A1}{"0A1}}%
-    \parindent\CJKtwospaces
-}
+\usepackage{indentfirst}
+\setlength{\parindent}{2.5em}
 \renewcommand\contentsname{目~~~~录}
 \renewcommand\chaptername{\CJKprechaptername\CJKthechapter\CJKchaptername}
 \setlength{\parskip}{3pt plus1pt minus1pt} % 段落间距
@@ -253,49 +242,77 @@
 \newcommand\mi{{\mathrm i}}             % constant i
 \newcommand\me{{\mathrm e}}             % constant e
 \newcommand\mreal{{\mathbb R}}          % constant real set R
+\newcommand\mhilb{{\mathbb H}}          % constant hilbert set H
 \newcommand\mcond{{\mathrm{Cond.}}}     % condition symbol
+\newcommand\mconst{{\mathrm{const}}}    % constant symbol
+\newcommand\mve{{\bm e}}                % vector e
 \newcommand\mvu{{\bm u}}                % vector u
 \newcommand\mvv{{\bm v}}                % vector v
 \newcommand\mvw{{\bm w}}                % vector w
 \newcommand\mvx{{\bm x}}                % vector x
 \newcommand\mvy{{\bm y}}                % vector y
 \newcommand\mvz{{\bm z}}                % vector z
+\newcommand\mvzero{{\bm 0}}             % vector 0
+\newcommand\mvone{{\bm 1}}              % vector 1
+\newcommand\mvalpha{{\bm \alpha}}       % vector alpha
+\newcommand\mvomega{{\bm \omega}}       % vector omega
 \newcommand\mma{{\mathbf A}}            % matrix A
+\newcommand\mmb{{\mathbf B}}            % matrix B
+\newcommand\mmd{{\mathbf D}}            % matrix D
+\newcommand\mmh{{\mathbf H}}            % matrix H
 \newcommand\mmi{{\mathbf I}}            % matrix I
+\newcommand\mmk{{\mathbf K}}            % matrix K
+\newcommand\mml{{\mathbf L}}            % matrix L
+\newcommand\mmo{{\mathbf O}}            % matrix O
+\newcommand\mmp{{\mathbf P}}            % matrix P
 \newcommand\mms{{\mathbf S}}            % matrix S
+\newcommand\mmt{{\mathbf T}}            % matrix T
+\newcommand\mmtt{{{\mathbf T}^T}}       % matrix T^T
+\newcommand\mmu{{\mathbf U}}            % matrix U
+\newcommand\mmv{{\mathbf V}}            % matrix V
 \newcommand\mmw{{\mathbf W}}            % matrix W
-\newcommand\mmwt{{\mathbf{W}^T}}        % matrix W^T
+\newcommand\mmx{{\mathbf X}}            % matrix X
+\newcommand\mmy{{\mathbf Y}}            % matrix Y
+\newcommand\mmz{{\mathbf Z}}            % matrix Z
+\newcommand\mmlambda{{\bm \Lambda}}     % matrix \Lambda
 \DeclareMathOperator\diff{d\!}          % operator diff
 \DeclareMathOperator\Diff{D\!}          % operator Diff
+\DeclareMathOperator\Expect{E}          % operator Expect
+\DeclareMathOperator\diag{diag}         % operator diag
+\DeclareMathOperator\eig{eig}           % operator eig
 \DeclareMathOperator\lcm{lcm}           % operator lcm
-\DeclareMathOperator\tr{tr}             % operator lcm
+\DeclareMathOperator\tr{tr}             % operator tr
+\DeclareMathOperator\var{var}           % operator var
+\DeclareMathOperator\cov{cov}           % operator cov
+\DeclareMathOperator\mean{mean}         % operator mean
 \DeclareMathOperator*{\argmin}{argmin}  % operator argmin
+\DeclareMathOperator{\dist}{dist}       % operator dist
 \allowdisplaybreaks[4]
 %------------------------------------------------------------------------------%
 
 %----------------------------------其他补充设置--------------------------------%
 % 重置列表环境的间隔
-\let\orig@Itemize =\itemize
-\let\orig@Enumerate =\enumerate
-\let\orig@Description =\description
+% \let\orig@Itemize =\itemize
+% \let\orig@Enumerate =\enumerate
+% \let\orig@Description =\description
 
-\def\Myspacing{
-    \itemsep=1.5ex \topsep=-0.5ex \partopsep=0pt \parskip=0pt \parsep=0.5ex
-}
+% \def\Myspacing{
+%     \itemsep=1.5ex \topsep=-0.5ex \partopsep=0pt \parskip=0pt \parsep=0.5ex
+% }
 
-\def\newitemsep{
-    \renewenvironment{itemize}{\orig@Itemize\Myspacing}{\endlist}
-    \renewenvironment{enumerate}{\orig@Enumerate\Myspacing}{\endlist}
-    \renewenvironment{description}{\orig@Description\Myspacing}{\endlist}
-}
+% \def\newitemsep{
+%     \renewenvironment{itemize}{\orig@Itemize\Myspacing}{\endlist}
+%     \renewenvironment{enumerate}{\orig@Enumerate\Myspacing}{\endlist}
+%     \renewenvironment{description}{\orig@Description\Myspacing}{\endlist}
+% }
 
-\def\olditemsep{
-    \renewenvironment{itemize}{\orig@Itemize}{\endlist}
-    \renewenvironment{enumerate}{\orig@Enumerate}{\endlist}
-    \renewenvironment{description}{\orig@Description}{\endlist}
-}
+% \def\olditemsep{
+%     \renewenvironment{itemize}{\orig@Itemize}{\endlist}
+%     \renewenvironment{enumerate}{\orig@Enumerate}{\endlist}
+%     \renewenvironment{description}{\orig@Description}{\endlist}
+% }
 
-\newitemsep
+% \newitemsep
 % 下划线
 \newcommand\dlmu@underline[2][5cm]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
 \let\coverunderline\dlmu@underline
