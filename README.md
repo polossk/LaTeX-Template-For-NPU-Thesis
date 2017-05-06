@@ -2,7 +2,7 @@
 ![Platfrom](https://img.shields.io/badge/Platfrom%20TeXLive-2016-3D6117.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
-Version ![Version](https://img.shields.io/badge/version-v1.2.0-brightgreen.svg)
+![Version](https://img.shields.io/badge/version-v1.2.0-674EA7.svg)
 
 ## Usage
 1. 安装 `common files` 中的字体
