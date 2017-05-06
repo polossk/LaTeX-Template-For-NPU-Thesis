@@ -1313,8 +1313,10 @@ FUNCTION {phdthesis} {mastersthesis}
 FUNCTION {misc}
 { output.bibitem
   format.authors output
+  new.block
+  "Z" titile.output
+  new.block
   title howpublished new.block.checkb
-  format.title output
   howpublished new.block.checka
   howpublished "howpublished" bibinfo.check output
   format.date output
