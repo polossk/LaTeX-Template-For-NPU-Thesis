@@ -1,8 +1,18 @@
 \begin{tikzpicture}
     \draw[line width=0.10cm] (0, 0) circle (2.0cm);
-    \fill[gray!15] (0, 0) -- (1.3cm,0cm) arc (0:230:1.3cm) -- cycle;
-	\fill[gray!15] (0, 0) -- (1.3cm,0cm) arc (0:-50:1.3cm) -- cycle;
-	\draw[line width=0.03cm] (0, 0) circle (1.32cm);
+    % \fill[gray!15] (0, 0) -- (1.3cm,0cm) arc (0:230:1.3cm) -- cycle;
+    % \fill[gray!15] (0, 0) -- (1.3cm,0cm) arc (0:-50:1.3cm) -- cycle;
+    \foreach \t in {-50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230}
+    {
+        \foreach \p/\d in {0/0.01cm, 5/-0.01cm}
+        {
+            \foreach \r in {1.27cm, 1.17cm, 1.07cm, 0.97cm}
+            {
+                \fill (\t + \p: \r + \d) circle (0.01cm);
+            }
+        }
+    };
+    \draw[line width=0.03cm] (0, 0) circle (1.32cm);
     \fill[white] (0, 0) circle (0.9cm);
     \draw[line width=0.05cm] (0, 0) circle (0.9cm);
     \fill[black] (-0.50, -0.73) .. controls (-0.35, -0.81) ..
