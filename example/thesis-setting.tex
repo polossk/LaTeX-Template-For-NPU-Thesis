@@ -29,6 +29,7 @@
 \usepackage{layouts}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{clrscode}
+\usepackage{gensymb}
 %------------------------------------------------------------------------------%
 
 
@@ -161,8 +162,8 @@
 
 
 %----------------------------设置段落标题与目录格式----------------------------%
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
 
 
 % 正文中标题格式，毋需标号
@@ -346,6 +347,11 @@
     Pascal, C++, Java, Ruby, Python, Matlab, R
 }
 %------------------------------------------------------------------------------%
+
+\renewcommand\arraystretch{1.4}
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
+\renewcommand{\thetable}{\thechapter-\arabic{table}}
+\captionsetup[table]{labelfont=bf,textfont=bf}
 
 \endinput
 % 这是简单的 thesis(article) 的导言区设置，不能单独编译。
