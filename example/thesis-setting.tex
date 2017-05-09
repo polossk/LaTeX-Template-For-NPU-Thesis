@@ -72,8 +72,11 @@
 \newcommand{\sSanhao}{\fontsize{16pt}{24pt}\selectfont}         % 三号, 1.5倍
 \newcommand{\sXiaosan}{\fontsize{15pt}{22pt}\selectfont}        % 小三, 1.5倍
 \newcommand{\sSihao}{\fontsize{14pt}{21pt}\selectfont}          % 四号, 1.5倍
+\newcommand{\sBSihao}{\fontsize{14pt}{17.5pt}\selectfont}          % 四号, 1.5倍
 \newcommand{\sHalfXiaosi}{\fontsize{13pt}{19.5pt}\selectfont}   % 半小四, 1.5倍
+\newcommand{\sBXiaosi}{\fontsize{13pt}{16.25pt}\selectfont}   % 半小四, 1.25倍
 \newcommand{\sXiaosi}{\fontsize{12pt}{14.4pt}\selectfont}       % 小四, 1.25倍
+\newcommand{\sDXiaosi}{\fontsize{12pt}{16pt}\selectfont}        % 小四, 单倍
 \newcommand{\sLargeWuhao}{\fontsize{11pt}{11pt}\selectfont}     % 大五, 单倍
 \newcommand{\sWuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}      % 五号, 单倍
 \newcommand{\sXiaowu}{\fontsize{9pt}{9pt}\selectfont}           % 小五, 单倍
@@ -135,7 +138,7 @@
 \renewcommand\equationautorefname{式}
 \newcommand\myreference[1]{[\ref{#1}]}
 \newcommand\eqrefe[1]{式(\ref{#1})}
-\renewcommand\theequation{\thechapter.\arabic{equation}}
+\renewcommand\theequation{\thechapter-\arabic{equation}}
 % 增加 \ucite 命令使显示的引用为上标形式
 \newcommand{\ucite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
 %------------------------------------------------------------------------------%
@@ -184,8 +187,8 @@
 
 \titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\bf}
     {\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
-\titleformat{\section}[hang]{\fHei \bf \sSihao}
-    {\sSihao \thesection}{0.5em}{}{}
+\titleformat{\section}[hang]{\fHei \bf \sXiaosan}
+    {\sXiaosan \thesection}{0.5em}{}{}
 \titleformat{\subsection}[hang]{\fHei \bf \sHalfXiaosi}
     {\sHalfXiaosi \thesubsection}{0.5em}{}{}
 \titleformat{\subsubsection}[hang]{\fHei \bf}
@@ -276,6 +279,10 @@
 \newcommand\mmy{{\mathbf Y}}            % matrix Y
 \newcommand\mmz{{\mathbf Z}}            % matrix Z
 \newcommand\mmlambda{{\bm \Lambda}}     % matrix \Lambda
+
+\newcommand\mf{{\mathcal{F}}}
+\newcommand\mr{{\mathcal{R}}}
+
 \DeclareMathOperator\diff{d\!}          % operator diff
 \DeclareMathOperator\Diff{D\!}          % operator Diff
 \DeclareMathOperator\Expect{E}          % operator Expect
