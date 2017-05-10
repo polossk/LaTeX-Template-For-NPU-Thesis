@@ -72,9 +72,9 @@
 \newcommand{\sSanhao}{\fontsize{16pt}{24pt}\selectfont}         % 三号, 1.5倍
 \newcommand{\sXiaosan}{\fontsize{15pt}{22pt}\selectfont}        % 小三, 1.5倍
 \newcommand{\sSihao}{\fontsize{14pt}{21pt}\selectfont}          % 四号, 1.5倍
-\newcommand{\sBSihao}{\fontsize{14pt}{17.5pt}\selectfont}          % 四号, 1.5倍
-\newcommand{\sHalfXiaosi}{\fontsize{13pt}{19.5pt}\selectfont}   % 半小四, 1.5倍
-\newcommand{\sBXiaosi}{\fontsize{13pt}{16.25pt}\selectfont}   % 半小四, 1.25倍
+\newcommand{\sBSihao}{\fontsize{14pt}{17.5pt}\selectfont}		% 四号, 1.25倍
+\newcommand{\sHalfXiaosi}{\fontsize{13pt}{16.25pt}\selectfont}		% 半小四, 1倍
+\newcommand{\sBXiaosi}{\fontsize{13pt}{19pt}\selectfont}   		% 半小四, 1.5倍
 \newcommand{\sXiaosi}{\fontsize{12pt}{14.4pt}\selectfont}       % 小四, 1.25倍
 \newcommand{\sDXiaosi}{\fontsize{12pt}{16pt}\selectfont}        % 小四, 单倍
 \newcommand{\sLargeWuhao}{\fontsize{11pt}{11pt}\selectfont}     % 大五, 单倍
@@ -189,14 +189,14 @@
     {\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
 \titleformat{\section}[hang]{\fHei \bf \sXiaosan}
     {\sXiaosan \thesection}{0.5em}{}{}
-\titleformat{\subsection}[hang]{\fHei \bf \sHalfXiaosi}
-    {\sHalfXiaosi \thesubsection}{0.5em}{}{}
+\titleformat{\subsection}[hang]{\fHei \bf \sBXiaosi}
+    {\sBXiaosi \thesubsection}{0.5em}{}{}
 \titleformat{\subsubsection}[hang]{\fHei \bf}
     {\thesubsubsection }{0.5em}{}{}
 % 目录格式
 \titlespacing{\chapter}{0pt}{-3ex  plus .1ex minus .2ex}{0.25em}
 \titlespacing{\section}{0pt}{-0.2em}{0em}
-\titlespacing{\subsection}{0pt}{-0.25em}{0em}
+\titlespacing{\subsection}{0pt}{0.5em}{0em}
 \titlespacing{\subsubsection}{0pt}{0.25em}{0pt}
 % 缩小目录中各级标题之间的缩进
 \dottedcontents{chapter}[0.0em]{\fHei\vspace{0.5em}}{0.0em}{5pt}
