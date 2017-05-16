@@ -29,6 +29,7 @@
 \usepackage{layouts}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{clrscode}
+\usepackage{gensymb}
 %------------------------------------------------------------------------------%
 
 
@@ -71,7 +72,7 @@
 \newcommand{\sSanhao}{\fontsize{16pt}{24pt}\selectfont}         % 三号, 1.5倍
 \newcommand{\sXiaosan}{\fontsize{15pt}{22pt}\selectfont}        % 小三, 1.5倍
 \newcommand{\sSihao}{\fontsize{14pt}{21pt}\selectfont}          % 四号, 1.5倍
-\newcommand{\sHalfXiaosi}{\fontsize{13pt}{19.5pt}\selectfont}   % 半小四, 1.5倍
+\newcommand{\sHalfXiaosi}{\fontsize{13pt}{16.25pt}\selectfont}  % 半小四, 1倍
 \newcommand{\sXiaosi}{\fontsize{12pt}{14.4pt}\selectfont}       % 小四, 1.25倍
 \newcommand{\sLargeWuhao}{\fontsize{11pt}{11pt}\selectfont}     % 大五, 单倍
 \newcommand{\sWuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}      % 五号, 单倍
@@ -134,7 +135,7 @@
 \renewcommand\equationautorefname{式}
 \newcommand\myreference[1]{[\ref{#1}]}
 \newcommand\eqrefe[1]{式(\ref{#1})}
-\renewcommand\theequation{\thechapter.\arabic{equation}}
+\renewcommand\theequation{\thechapter-\arabic{equation}}
 % 增加 \ucite 命令使显示的引用为上标形式
 \newcommand{\ucite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
 %------------------------------------------------------------------------------%
@@ -152,15 +153,15 @@
 \XeTeXlinebreakskip = 0pt plus 1pt    %调整换行逻辑的弹性大小
 % \xeCJKcaption{gb_452}
 \usepackage{indentfirst}
-\setlength{\parindent}{2.5em}
+\setlength{\parindent}{26pt}
 \setlength{\parskip}{3pt plus 1pt minus 1pt} % 段落间距
 \renewcommand{\baselinestretch}{1.25} % 行距
 %------------------------------------------------------------------------------%
 
 
 %----------------------------设置段落标题与目录格式----------------------------%
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
 
 
 % 正文中标题格式，毋需标号
@@ -194,7 +195,7 @@
 % 缩小正文中各级标题之间的缩进
 \titlespacing{\chapter}{0pt}{-3ex plus .1ex minus .2ex}{0.25em}
 \titlespacing{\section}{0pt}{-0.2em}{0em}
-\titlespacing{\subsection}{0pt}{-0.25em}{0em}
+\titlespacing{\subsection}{0pt}{0.5em}{0em}
 \titlespacing{\subsubsection}{0pt}{0.25em}{0pt}
 
 % 定义目录中各级标题之间的格式以及缩进
@@ -284,6 +285,8 @@
 \newcommand\mmy{{\mathbf Y}}            % matrix Y
 \newcommand\mmz{{\mathbf Z}}            % matrix Z
 \newcommand\mmlambda{{\bm \Lambda}}     % matrix \Lambda
+\newcommand\mf{{\mathcal{F}}}           % mathcal F
+\newcommand\mr{{\mathcal{R}}}           % mathcal R
 \DeclareMathOperator\diff{d\!}          % operator diff
 \DeclareMathOperator\Diff{D\!}          % operator Diff
 \DeclareMathOperator\Expect{E}          % operator Expect
@@ -355,6 +358,12 @@
     Pascal, C++, Java, Ruby, Python, Matlab, R
 }
 %------------------------------------------------------------------------------%
+
+\renewcommand\arraystretch{1.4}
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
+\renewcommand{\thetable}{\thechapter-\arabic{table}}
+\captionsetup[table]{labelfont=bf,textfont=bf}
+\graphicspath{{figures/}}
 
 \endinput
 % 这是简单的 thesis(article) 的导言区设置，不能单独编译。
