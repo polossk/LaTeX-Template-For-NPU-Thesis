@@ -2,7 +2,7 @@
 %                                                                              %
 %   LaTeX Template for Bachlor Thesis of Northwestern Polytechnical University %
 %   Using XeLeTeX + MakeIndex + BibTeX, or Using CTeX v2.9.2.164               %
-%   Version: 1.0.0                                                             %
+%   Version: 1.3.0                                                             %
 %                                                                              %
 %------------------------------------------------------------------------------%
 %   Copyright 2016 by Shangkun Shen, MIT-LICENSE(see mit-license.polossk.com)  %
@@ -150,12 +150,10 @@
 %--------------------------设置中文段落缩进与正文版式--------------------------%
 \XeTeXlinebreaklocale "zh"       %使用中文的换行风格
 \XeTeXlinebreakskip = 0pt plus 1pt    %调整换行逻辑的弹性大小
-\xeCJKcaption{gb_452}
+% \xeCJKcaption{gb_452}
 \usepackage{indentfirst}
 \setlength{\parindent}{2.5em}
-\renewcommand\contentsname{目~~~~录}
-\renewcommand\chaptername{\CJKprechaptername\CJKthechapter\CJKchaptername}
-\setlength{\parskip}{3pt plus1pt minus1pt} % 段落间距
+\setlength{\parskip}{3pt plus 1pt minus 1pt} % 段落间距
 \renewcommand{\baselinestretch}{1.25} % 行距
 %------------------------------------------------------------------------------%
 
@@ -174,6 +172,7 @@
 %     {\thesubsubsection }{0.5em}{}{}
 % 正文中标题格式，需要标号
 
+\newcommand\chapterID[1]{第\CJKnumber{#1}章}
 \renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
@@ -181,24 +180,34 @@
 \renewcommand{\contentsname}{目~录}
 \newcommand{\keywords}[1]{\\ \\ \textbf{关~键~词}：#1}
 
-\titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\bf}
+
+\titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\bf}%
     {\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
-\titleformat{\section}[hang]{\fHei \bf \sSihao}
+\titleformat{\section}[hang]{\fHei \bf \sSihao}%
     {\sSihao \thesection}{0.5em}{}{}
-\titleformat{\subsection}[hang]{\fHei \bf \sHalfXiaosi}
+\titleformat{\subsection}[hang]{\fHei \bf \sHalfXiaosi}%
     {\sHalfXiaosi \thesubsection}{0.5em}{}{}
-\titleformat{\subsubsection}[hang]{\fHei \bf}
+\titleformat{\subsubsection}[hang]{\fHei \bf}%
     {\thesubsubsection }{0.5em}{}{}
-% 目录格式
-\titlespacing{\chapter}{0pt}{-3ex  plus .1ex minus .2ex}{0.25em}
+
+
+% 缩小正文中各级标题之间的缩进
+\titlespacing{\chapter}{0pt}{-3ex plus .1ex minus .2ex}{0.25em}
 \titlespacing{\section}{0pt}{-0.2em}{0em}
 \titlespacing{\subsection}{0pt}{-0.25em}{0em}
 \titlespacing{\subsubsection}{0pt}{0.25em}{0pt}
-% 缩小目录中各级标题之间的缩进
-\dottedcontents{chapter}[0.0em]{\fHei\vspace{0.5em}}{0.0em}{5pt}
+
+% 定义目录中各级标题之间的格式以及缩进
+% \dottedcontents{chapter}[0.0em]{\fHei\vspace{0.5em}}{0.0em}{5pt}
 \dottedcontents{section}[1.16cm]{}{1.8em}{5pt}
 \dottedcontents{subsection}[2.00cm]{}{2.7em}{5pt}
 \dottedcontents{subsubsection}[2.86cm]{}{3.4em}{5pt}
+\titlecontents{chapter}[0pt]{\fHei\vspace{0.5em}}%
+    {\contentsmargin{0pt}\fHei\makebox[0pt][l]{\chapterID{\thecontentslabel}}\hspace{3.8em}}%
+    {\contentsmargin{0pt}\fHei}%
+    {\titlerule*[.5pc]{.}\contentspage}[\vspace{0em}]
+
+
 %------------------------------------------------------------------------------%
 
 %---------------------------------设置页眉页脚---------------------------------%

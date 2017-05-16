@@ -2,7 +2,7 @@
 %                                                                              %
 %   LaTeX Template for Bachlor Thesis of Northwestern Polytechnical University %
 %   Using XeLeTeX + MakeIndex + BibTeX, or Using CTeX v2.9.2.164               %
-%   Version: 1.0.0                                                             %
+%   Version: 1.3.0                                                             %
 %                                                                              %
 %------------------------------------------------------------------------------%
 %   Copyright 2016 by Shangkun Shen, MIT-LICENSE(see mit-license.polossk.com)  %
@@ -27,7 +27,8 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{layouts}
-\usepackage{cite}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{clrscode}
 %------------------------------------------------------------------------------%
 
 
@@ -110,24 +111,14 @@
 
 
 %------------------------------添加插图与表格控制------------------------------%
-\usepackage{graphics}
-\usepackage{subfigure}
-\usepackage{epsfig}
-\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[font=small,labelsep=quad]{caption}
 \usepackage{wrapfig}
-\usepackage{rotating}
-\usepackage{multirow}
+\usepackage{multirow,makecell}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{setspace}
-\renewcommand{\captionfont}{\CJKfamily{song}\rmfamily}
-\renewcommand{\captionlabelfont}{\CJKfamily{song}\rmfamily}
-% 去掉图表号后面的:
-% 图表标题字体为11pt, 这里写作大五号
-\renewcommand{\captionfont}{\sLargeWuhao}
-% 定义缩放标准
-\def\gs{1.0}
 %------------------------------------------------------------------------------%
 
 
@@ -139,8 +130,11 @@
 
 %---------------------------------设置引用格式---------------------------------%
 \renewcommand\figureautorefname{图}
+\renewcommand\tableautorefname{表}
+\renewcommand\equationautorefname{式}
 \newcommand\myreference[1]{[\ref{#1}]}
-\renewcommand\theequation{\arabic{equation}}
+\newcommand\eqrefe[1]{式(\ref{#1})}
+\renewcommand\theequation{\thechapter.\arabic{equation}}
 % 增加 \ucite 命令使显示的引用为上标形式
 \newcommand{\ucite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
 %------------------------------------------------------------------------------%
@@ -149,21 +143,17 @@
 %--------------------------------设置定理类环境--------------------------------%
 \usepackage[amsmath,thmmarks]{ntheorem}
 \newtheorem{myexample}{例}
+\newtheorem{thm}{定理}
 %------------------------------------------------------------------------------%
 
 
 %--------------------------设置中文段落缩进与正文版式--------------------------%
 \XeTeXlinebreaklocale "zh"       %使用中文的换行风格
 \XeTeXlinebreakskip = 0pt plus 1pt    %调整换行逻辑的弹性大小
-\xeCJKcaption{gb_452}
-\newlength \CJKtwospaces
-
-\def\CJKindent{
-    \settowidth\CJKtwospaces{\CJKchar{"0A1}{"0A1}\CJKchar{"0A1}{"0A1}}%
-    \parindent\CJKtwospaces
-}
-\renewcommand\contentsname{目~~~~录}
-\setlength{\parskip}{3pt plus1pt minus1pt} % 段落间距
+% \xeCJKcaption{gb_452}
+\usepackage{indentfirst}
+\setlength{\parindent}{2.5em}
+\setlength{\parskip}{3pt plus 1pt minus 1pt} % 段落间距
 \renewcommand{\baselinestretch}{1.25} % 行距
 %------------------------------------------------------------------------------%
 
@@ -171,32 +161,53 @@
 %----------------------------设置段落标题与目录格式----------------------------%
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
-\titleformat{\chapter}[hang] {\normalfont\sSanhao\filcenter\fHei\sf}
-    {\sSanhao{\chaptertitlename}} {20pt}{\sSanhao}
+
+
 % 正文中标题格式，毋需标号
-\titleformat{\section}[hang]{\fHei \sf \sSihao}
-    {\sSihao }{0.5em}{}{}
-\titleformat{\subsection}[hang]{\fHei \sf \sHalfXiaosi}
-    {\sHalfXiaosi }{0.5em}{}{}
-\titleformat{\subsubsection}[hang]{\fHei \sf}
-    {\thesubsubsection }{0.5em}{}{}
-% 正文中标题格式，需要标号
 % \titleformat{\section}[hang]{\fHei \sf \sSihao}
-%     {\sSihao \thesection}{0.5em}{}{}
+%     {\sSihao }{0.5em}{}{}
 % \titleformat{\subsection}[hang]{\fHei \sf \sHalfXiaosi}
-%     {\sHalfXiaosi \thesubsection}{0.5em}{}{}
+%     {\sHalfXiaosi }{0.5em}{}{}
 % \titleformat{\subsubsection}[hang]{\fHei \sf}
 %     {\thesubsubsection }{0.5em}{}{}
-% 目录格式
-\titlespacing{\chapter}{0pt}{-3ex  plus .1ex minus .2ex}{0.25em}
+% 正文中标题格式，需要标号
+
+\newcommand\chapterID[1]{第\CJKnumber{#1}章}
+\renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\bibname}{参考文献}
+\renewcommand{\contentsname}{目~录}
+\newcommand{\keywords}[1]{\\ \\ \textbf{关~键~词}：#1}
+
+
+\titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\bf}%
+    {\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
+\titleformat{\section}[hang]{\fHei \bf \sSihao}%
+    {\sSihao \thesection}{0.5em}{}{}
+\titleformat{\subsection}[hang]{\fHei \bf \sHalfXiaosi}%
+    {\sHalfXiaosi \thesubsection}{0.5em}{}{}
+\titleformat{\subsubsection}[hang]{\fHei \bf}%
+    {\thesubsubsection }{0.5em}{}{}
+
+
+% 缩小正文中各级标题之间的缩进
+\titlespacing{\chapter}{0pt}{-3ex plus .1ex minus .2ex}{0.25em}
 \titlespacing{\section}{0pt}{-0.2em}{0em}
 \titlespacing{\subsection}{0pt}{-0.25em}{0em}
 \titlespacing{\subsubsection}{0pt}{0.25em}{0pt}
-% 缩小目录中各级标题之间的缩进
-\dottedcontents{chapter}[0.0em]{\fHei\vspace{0.5em}}{0.0em}{5pt}
+
+% 定义目录中各级标题之间的格式以及缩进
+% \dottedcontents{chapter}[0.0em]{\fHei\vspace{0.5em}}{0.0em}{5pt}
 \dottedcontents{section}[1.16cm]{}{1.8em}{5pt}
 \dottedcontents{subsection}[2.00cm]{}{2.7em}{5pt}
 \dottedcontents{subsubsection}[2.86cm]{}{3.4em}{5pt}
+\titlecontents{chapter}[0pt]{\fHei\vspace{0.5em}}%
+    {\contentsmargin{0pt}\fHei\makebox[0pt][l]{\chapterID{\thecontentslabel}}\hspace{3.8em}}%
+    {\contentsmargin{0pt}\fHei}%
+    {\titlerule*[.5pc]{.}\contentspage}[\vspace{0em}]
+
+
 %------------------------------------------------------------------------------%
 
 %---------------------------------设置页眉页脚---------------------------------%
@@ -212,19 +223,20 @@
 \makeatletter
 \renewcommand{\headrule}{%
     {
-        \if@fancyplain\let\headrulewidth\plainheadrulewidth
-        \fi\makeheadrule
+        \if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+        \makeheadrule
     }
 }
 \pagestyle{fancyplain}
 \fancyhf{}
 \fancyfoot[C,C]{\sWuhao-~\thepage~-}
 % 后续文字可以自行修改
-\chead{\sSanhao\raisebox{0.04cm}{\fNWPU 西北工业大学} \fSong {\bf 本科毕业设计英文翻译}}
+\chead{\sSanhao\raisebox{0.04cm}{\fNWPU 西北工业大学} \fSong {\bf 本科毕业设计论文}}
 %------------------------------------------------------------------------------%
 
 
 %-------------------------------数学符号格式控制-------------------------------%
+\usepackage{bm}
 \def\mathbi#1{\textbf{\em #1}}
 % Caligraphic letters:      \mathcal{A}
 % Mathbb letters:           \mathbb{A}
@@ -236,38 +248,80 @@
 
 
 %-------------------------------数学特殊符号控制-------------------------------%
-\newcommand\mi{\mathrm{i}}      % constant i
-\newcommand\me{\mathrm{e}}      % constant e
-\DeclareMathOperator\diff{d\!}  % diff operator
-\DeclareMathOperator\Diff{D\!}  % Diff operator
-\DeclareMathOperator\lcm{lcm}   % lcm operator
-\DeclareMathOperator*{\argmin}{argmin} % argmin operator
+\newcommand\mi{{\mathrm i}}             % constant i
+\newcommand\me{{\mathrm e}}             % constant e
+\newcommand\mreal{{\mathbb R}}          % constant real set R
+\newcommand\mhilb{{\mathbb H}}          % constant hilbert set H
+\newcommand\mcond{{\mathrm{Cond.}}}     % condition symbol
+\newcommand\mconst{{\mathrm{const}}}    % constant symbol
+\newcommand\mve{{\bm e}}                % vector e
+\newcommand\mvu{{\bm u}}                % vector u
+\newcommand\mvv{{\bm v}}                % vector v
+\newcommand\mvw{{\bm w}}                % vector w
+\newcommand\mvx{{\bm x}}                % vector x
+\newcommand\mvy{{\bm y}}                % vector y
+\newcommand\mvz{{\bm z}}                % vector z
+\newcommand\mvzero{{\bm 0}}             % vector 0
+\newcommand\mvone{{\bm 1}}              % vector 1
+\newcommand\mvalpha{{\bm \alpha}}       % vector alpha
+\newcommand\mvomega{{\bm \omega}}       % vector omega
+\newcommand\mma{{\mathbf A}}            % matrix A
+\newcommand\mmb{{\mathbf B}}            % matrix B
+\newcommand\mmd{{\mathbf D}}            % matrix D
+\newcommand\mmh{{\mathbf H}}            % matrix H
+\newcommand\mmi{{\mathbf I}}            % matrix I
+\newcommand\mmk{{\mathbf K}}            % matrix K
+\newcommand\mml{{\mathbf L}}            % matrix L
+\newcommand\mmo{{\mathbf O}}            % matrix O
+\newcommand\mmp{{\mathbf P}}            % matrix P
+\newcommand\mms{{\mathbf S}}            % matrix S
+\newcommand\mmt{{\mathbf T}}            % matrix T
+\newcommand\mmtt{{{\mathbf T}^T}}       % matrix T^T
+\newcommand\mmu{{\mathbf U}}            % matrix U
+\newcommand\mmv{{\mathbf V}}            % matrix V
+\newcommand\mmw{{\mathbf W}}            % matrix W
+\newcommand\mmx{{\mathbf X}}            % matrix X
+\newcommand\mmy{{\mathbf Y}}            % matrix Y
+\newcommand\mmz{{\mathbf Z}}            % matrix Z
+\newcommand\mmlambda{{\bm \Lambda}}     % matrix \Lambda
+\DeclareMathOperator\diff{d\!}          % operator diff
+\DeclareMathOperator\Diff{D\!}          % operator Diff
+\DeclareMathOperator\Expect{E}          % operator Expect
+\DeclareMathOperator\diag{diag}         % operator diag
+\DeclareMathOperator\eig{eig}           % operator eig
+\DeclareMathOperator\lcm{lcm}           % operator lcm
+\DeclareMathOperator\tr{tr}             % operator tr
+\DeclareMathOperator\var{var}           % operator var
+\DeclareMathOperator\cov{cov}           % operator cov
+\DeclareMathOperator\mean{mean}         % operator mean
+\DeclareMathOperator*{\argmin}{argmin}  % operator argmin
+\DeclareMathOperator{\dist}{dist}       % operator dist
 \allowdisplaybreaks[4]
 %------------------------------------------------------------------------------%
 
 %----------------------------------其他补充设置--------------------------------%
 % 重置列表环境的间隔
-\let\orig@Itemize =\itemize
-\let\orig@Enumerate =\enumerate
-\let\orig@Description =\description
+% \let\orig@Itemize =\itemize
+% \let\orig@Enumerate =\enumerate
+% \let\orig@Description =\description
 
-\def\Myspacing{
-    \itemsep=1.5ex \topsep=-0.5ex \partopsep=0pt \parskip=0pt \parsep=0.5ex
-}
+% \def\Myspacing{
+%     \itemsep=1.5ex \topsep=-0.5ex \partopsep=0pt \parskip=0pt \parsep=0.5ex
+% }
 
-\def\newitemsep{
-    \renewenvironment{itemize}{\orig@Itemize\Myspacing}{\endlist}
-    \renewenvironment{enumerate}{\orig@Enumerate\Myspacing}{\endlist}
-    \renewenvironment{description}{\orig@Description\Myspacing}{\endlist}
-}
+% \def\newitemsep{
+%     \renewenvironment{itemize}{\orig@Itemize\Myspacing}{\endlist}
+%     \renewenvironment{enumerate}{\orig@Enumerate\Myspacing}{\endlist}
+%     \renewenvironment{description}{\orig@Description\Myspacing}{\endlist}
+% }
 
-\def\olditemsep{
-    \renewenvironment{itemize}{\orig@Itemize}{\endlist}
-    \renewenvironment{enumerate}{\orig@Enumerate}{\endlist}
-    \renewenvironment{description}{\orig@Description}{\endlist}
-}
+% \def\olditemsep{
+%     \renewenvironment{itemize}{\orig@Itemize}{\endlist}
+%     \renewenvironment{enumerate}{\orig@Enumerate}{\endlist}
+%     \renewenvironment{description}{\orig@Description}{\endlist}
+% }
 
-\newitemsep
+% \newitemsep
 % 下划线
 \newcommand\dlmu@underline[2][5cm]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
 \let\coverunderline\dlmu@underline

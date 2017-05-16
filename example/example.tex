@@ -16,20 +16,23 @@
 \pagenumbering{Roman}
 
 % 封皮
+\frontmatter
 \input{cover.tex}
 
 \setcounter{page}{1}
+\renewcommand{\baselinestretch}{1.25}
 
 % 中文摘要
-% \include{preface/c_abstract}
+\include{preface/c_abstract}
 % 英文摘要
-% \include{preface/e_abstract}
+\include{preface/e_abstract}
 
 \renewcommand{\baselinestretch}{1.25}
 \fontsize{12pt}{12pt}\selectfont
-
+\phantomsection
+\addcontentsline{toc}{chapter}{\fHei 目录}
 \tableofcontents
-
+\clearpage
 \mainmatter
 
 \renewcommand{\baselinestretch}{1.5}
@@ -40,19 +43,20 @@
 \input{chapters/chapter01.tex}
 \input{chapters/chapter02.tex}
 
-\sWuhao
-
 % 参考文献设置
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{\fHei 参考文献}
+\sWuhao
 % npu专用
 \bibliographystyle{nputhesis}
-% GB专用
-% \bibliographystyle{GBT7714-2005NLang}
-
 % 参考文献位置
 \bibliography{references/reference}
+
+% 附录
+\backmatter
+\input{appendix/acknowledgements.tex}
+\input{appendix/design-conclusion.tex}
 
 \clearpage
 \end{document}
