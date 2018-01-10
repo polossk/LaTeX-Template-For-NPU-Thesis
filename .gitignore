@@ -52,7 +52,6 @@ Temporary Items
 *.blg
 *.log
 *.out
-*.pdf
 *.thm
 *.toc
 *.gz(busy)
