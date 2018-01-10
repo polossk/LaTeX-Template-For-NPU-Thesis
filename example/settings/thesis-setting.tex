@@ -30,6 +30,7 @@
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{clrscode}
 \usepackage{gensymb}
+\usepackage[final]{pdfpages}
 %------------------------------------------------------------------------------%
 
 
@@ -65,24 +66,27 @@
 %---------------------------------设置字体大小---------------------------------%
 \usepackage{type1cm}
 % 字号与行距，统一前缀s(a.k.a size)
-\newcommand{\sChuhao}{\fontsize{42pt}{63pt}\selectfont}         % 初号, 1.5倍
-\newcommand{\sYihao}{\fontsize{26pt}{36pt}\selectfont}          % 一号, 1.4倍
-\newcommand{\sErhao}{\fontsize{22pt}{28pt}\selectfont}          % 二号, 1.25倍
-\newcommand{\sXiaoer}{\fontsize{18pt}{18pt}\selectfont}         % 小二, 单倍
-\newcommand{\sSanhao}{\fontsize{16pt}{24pt}\selectfont}         % 三号, 1.5倍
-\newcommand{\sXiaosan}{\fontsize{15pt}{22pt}\selectfont}        % 小三, 1.5倍
-\newcommand{\sSihao}{\fontsize{14pt}{21pt}\selectfont}          % 四号, 1.5倍
-\newcommand{\sHalfXiaosi}{\fontsize{13pt}{16.25pt}\selectfont}  % 半小四, 1倍
-\newcommand{\sXiaosi}{\fontsize{12pt}{14.4pt}\selectfont}       % 小四, 1.25倍
-\newcommand{\sLargeWuhao}{\fontsize{11pt}{11pt}\selectfont}     % 大五, 单倍
-\newcommand{\sWuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}      % 五号, 单倍
-\newcommand{\sXiaowu}{\fontsize{9pt}{9pt}\selectfont}           % 小五, 单倍
+\newcommand{\sChuhao}{\fontsize{42pt}{63pt}\selectfont}         		% 初号, 1.5倍
+\newcommand{\sYihao}{\fontsize{26pt}{36pt}\selectfont}          		% 一号, 1.4倍
+\newcommand{\sErhao}{\fontsize{22pt}{28pt}\selectfont}          		% 二号, 1.25倍
+\newcommand{\sXiaoer}{\fontsize{18pt}{18pt}\selectfont}         		% 小二, 单倍
+\newcommand{\sSanhao}{\fontsize{16pt}{24pt}\selectfont}         		% 三号, 1.5倍
+\newcommand{\sXiaosan}{\fontsize{15pt}{22pt}\selectfont}        		% 小三, 1.5倍
+\newcommand{\sSihao}{\fontsize{14pt}{21pt}\selectfont}          		% 四号, 1.5倍
+\newcommand{\sSHalfXiaosi}{\fontsize{13pt}{19pt}\selectfont}  			% 半小四, 1.5倍
+\newcommand{\sHalfXiaosi}{\fontsize{13pt}{16.25pt}\selectfont}  		% 半小四, 1.25倍
+\newcommand{\sRealHalfXiaosi}{\fontsize{12.5pt}{16.25pt}\selectfont}  	% 模板中的半小四, 1.25倍
+\newcommand{\sXiaosi}{\fontsize{12pt}{14.4pt}\selectfont}       		% 小四, 1.25倍
+\newcommand{\sLargeWuhao}{\fontsize{11pt}{11pt}\selectfont}     		% 大五, 单倍
+\newcommand{\sWuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}      		% 五号, 单倍
+\newcommand{\sXiaowu}{\fontsize{9pt}{9pt}\selectfont}           		% 小五, 单倍
 %------------------------------------------------------------------------------%
 
 
 %---------------------------------设置中文字体---------------------------------%
 \usepackage{fontspec}
-\usepackage[SlantFont,BoldFont,CJKchecksingle,CJKnumber]{xeCJK}
+%\usepackage[SlantFont,BoldFont,CJKchecksingle,CJKnumber]{xeCJK}
+\usepackage[SlantFont,BoldFont,CJKchecksingle]{xeCJK}
 % 使用 Adobe 字体
 \newcommand\adobeSog{Adobe Song Std}
 \newcommand\adobeHei{Adobe Heiti Std}
@@ -162,6 +166,7 @@
 %----------------------------设置段落标题与目录格式----------------------------%
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
+\usepackage{CJKnumb}
 
 
 % 正文中标题格式，毋需标号
@@ -174,7 +179,10 @@
 % 正文中标题格式，需要标号
 
 \newcommand\chapterID[1]{第\CJKnumber{#1}章}
-\renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
+\renewcommand{\chaptername}{第~\CJKnumber{\thechapter}~章}
+%\newcommand\chapterID[1]{第\zhnumber{#1}章}
+%\renewcommand{\chaptername}{第~\zhnumber{\thechapter}~章}
+%\renewcommand{\chaptername}{第 \thechapter 章}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
 \renewcommand{\bibname}{参考文献}
@@ -184,12 +192,14 @@
 
 \titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\bf}%
     {\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
-\titleformat{\section}[hang]{\fHei \bf \sSihao}%
-    {\sSihao \thesection}{0.5em}{}{}
-\titleformat{\subsection}[hang]{\fHei \bf \sHalfXiaosi}%
-    {\sHalfXiaosi \thesubsection}{0.5em}{}{}
-\titleformat{\subsubsection}[hang]{\fHei \bf}%
-    {\thesubsubsection }{0.5em}{}{}
+\titleformat{\section}[hang]{\fHei \bf \sXiaosan}%
+    {\sXiaosan \thesection}{0.5em}{}{}
+\titleformat{\subsection}[hang]{\fHei \bf \sSHalfXiaosi}%
+    {\sSHalfXiaosi \thesubsection}{0.5em}{}{}
+%\titleformat{\subsubsection}[hang]{\fHei \bf}%		%普通的subsubsection:1.2.3.4 标题
+%    {\thesubsubsection }{0.5em}{}{}
+\titleformat{\subsubsection}[hang]{\fHei \bf}		%小标题式的subsubsection:(4) 标题
+    {(\arabic{subsubsection})}{0.5em}{}{}
 
 
 % 缩小正文中各级标题之间的缩进
@@ -232,12 +242,11 @@
 \fancyhf{}
 \fancyfoot[C,C]{\sWuhao-~\thepage~-}
 % 后续文字可以自行修改
-\chead{\sSanhao\raisebox{0.04cm}{\fNWPU 西北工业大学} \fSong {\bf 本科毕业设计论文}}
+\chead{\sSanhao\raisebox{0.04cm}{　\fNWPU 西北工业大学} \fSong{{\textbf{本科毕业设计论文}　}}}
 %------------------------------------------------------------------------------%
 
 
 %-------------------------------数学符号格式控制-------------------------------%
-\usepackage{bm}
 \def\mathbi#1{\textbf{\em #1}}
 % Caligraphic letters:      \mathcal{A}
 % Mathbb letters:           \mathbb{A}
@@ -247,60 +256,6 @@
 % Math bold italic letters: \mathbi{A}
 %------------------------------------------------------------------------------%
 
-
-%-------------------------------数学特殊符号控制-------------------------------%
-\newcommand\mi{{\mathrm i}}             % constant i
-\newcommand\me{{\mathrm e}}             % constant e
-\newcommand\mreal{{\mathbb R}}          % constant real set R
-\newcommand\mhilb{{\mathbb H}}          % constant hilbert set H
-\newcommand\mcond{{\mathrm{Cond.}}}     % condition symbol
-\newcommand\mconst{{\mathrm{const}}}    % constant symbol
-\newcommand\mve{{\bm e}}                % vector e
-\newcommand\mvu{{\bm u}}                % vector u
-\newcommand\mvv{{\bm v}}                % vector v
-\newcommand\mvw{{\bm w}}                % vector w
-\newcommand\mvx{{\bm x}}                % vector x
-\newcommand\mvy{{\bm y}}                % vector y
-\newcommand\mvz{{\bm z}}                % vector z
-\newcommand\mvzero{{\bm 0}}             % vector 0
-\newcommand\mvone{{\bm 1}}              % vector 1
-\newcommand\mvalpha{{\bm \alpha}}       % vector alpha
-\newcommand\mvomega{{\bm \omega}}       % vector omega
-\newcommand\mma{{\mathbf A}}            % matrix A
-\newcommand\mmb{{\mathbf B}}            % matrix B
-\newcommand\mmd{{\mathbf D}}            % matrix D
-\newcommand\mmh{{\mathbf H}}            % matrix H
-\newcommand\mmi{{\mathbf I}}            % matrix I
-\newcommand\mmk{{\mathbf K}}            % matrix K
-\newcommand\mml{{\mathbf L}}            % matrix L
-\newcommand\mmo{{\mathbf O}}            % matrix O
-\newcommand\mmp{{\mathbf P}}            % matrix P
-\newcommand\mms{{\mathbf S}}            % matrix S
-\newcommand\mmt{{\mathbf T}}            % matrix T
-\newcommand\mmtt{{{\mathbf T}^T}}       % matrix T^T
-\newcommand\mmu{{\mathbf U}}            % matrix U
-\newcommand\mmv{{\mathbf V}}            % matrix V
-\newcommand\mmw{{\mathbf W}}            % matrix W
-\newcommand\mmx{{\mathbf X}}            % matrix X
-\newcommand\mmy{{\mathbf Y}}            % matrix Y
-\newcommand\mmz{{\mathbf Z}}            % matrix Z
-\newcommand\mmlambda{{\bm \Lambda}}     % matrix \Lambda
-\newcommand\mf{{\mathcal{F}}}           % mathcal F
-\newcommand\mr{{\mathcal{R}}}           % mathcal R
-\DeclareMathOperator\diff{d\!}          % operator diff
-\DeclareMathOperator\Diff{D\!}          % operator Diff
-\DeclareMathOperator\Expect{E}          % operator Expect
-\DeclareMathOperator\diag{diag}         % operator diag
-\DeclareMathOperator\eig{eig}           % operator eig
-\DeclareMathOperator\lcm{lcm}           % operator lcm
-\DeclareMathOperator\tr{tr}             % operator tr
-\DeclareMathOperator\var{var}           % operator var
-\DeclareMathOperator\cov{cov}           % operator cov
-\DeclareMathOperator\mean{mean}         % operator mean
-\DeclareMathOperator*{\argmin}{argmin}  % operator argmin
-\DeclareMathOperator{\dist}{dist}       % operator dist
-\allowdisplaybreaks[4]
-%------------------------------------------------------------------------------%
 
 %----------------------------------其他补充设置--------------------------------%
 % 重置列表环境的间隔
