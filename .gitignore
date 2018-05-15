@@ -56,3 +56,5 @@ Temporary Items
 *.toc
 *.gz(busy)
 *.gz
+*.fdb_latexmk
+*.fls

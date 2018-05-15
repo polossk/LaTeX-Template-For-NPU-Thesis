@@ -23,7 +23,7 @@
 9. 基于[MIT-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
 ```bibtex
 @misc{NWPUThesisLaTeXTemplate,
-    title={LaTeX-Template-For-NPU-Thesis},
+    title={{{\LaTeX}}-Template-For-NPU-Thesis},
     author={Shangkun Shen},
     year={2016},
     month={05}
