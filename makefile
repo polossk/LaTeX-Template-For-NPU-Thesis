@@ -17,6 +17,9 @@ close:
 	cmd /c taskkill /im Acrobat.exe /t /f || echo not find
 
 clean:
-	del -f *.aux *.bbl *.blg *.log *.out *.gz *.toc $(MAIN).pdf *.thm
+	del /s /f *.aux *.bbl *.blg *.log *.out *.gz *.toc *.thm *.fdb_latexmk *.fls
+
+wipe:
+	del /f $(MAIN).pdf
 
 .PHONY: clean

@@ -1,6 +1,11 @@
 \documentclass[12pt,a4paper,openany,oneside]{book}
 
-\input{thesis-setting}
+% 格式控制
+\input{settings/thesis-setting}
+
+% 非格式控制插件
+\usepackage{plug-ins/math-symbols}
+\input{plug-ins/aerocoeffs}
 
 % 仅用于测试
 \usepackage{blindtext}
@@ -17,7 +22,17 @@
 
 % 封皮
 \frontmatter
-\input{cover.tex}
+\input{settings/cover.tex}
+\clearpage
+\thispagestyle{empty}
+\phantom{s}
+\clearpage
+\includepdf{preface/tasklist.pdf} 
+\newpage
+\clearpage
+\thispagestyle{empty}
+\phantom{s}
+\clearpage
 
 \setcounter{page}{1}
 \renewcommand{\baselinestretch}{1.25}
@@ -33,28 +48,32 @@
 \addcontentsline{toc}{chapter}{\fHei 目录}
 \tableofcontents
 \clearpage
+
 \mainmatter
 
 \renewcommand{\baselinestretch}{1.0}
-
-\sHalfXiaosi\fSong
+\sRealHalfXiaosi\fSong
 
 % 正文内容
 \input{chapters/chapter01.tex}
 \input{chapters/chapter02.tex}
+\input{chapters/chapter03.tex}
 
 % 参考文献设置
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{\fHei 参考文献}
 \sWuhao
+
 % npu专用
-\bibliographystyle{nputhesis}
+\bibliographystyle{settings/nputhesis}
+
 % 参考文献位置
 \bibliography{references/reference}
 
 % 附录
 \backmatter
+\input{appendix/appendix.tex}
 \input{appendix/acknowledgements.tex}
 \input{appendix/design-conclusion.tex}
 

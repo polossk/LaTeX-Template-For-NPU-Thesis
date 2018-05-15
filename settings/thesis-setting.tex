@@ -11,25 +11,22 @@
 
 %---------------------------------纸张大小设置---------------------------------%
 \usepackage{geometry}
-    % 普通A4格式缩进
-    % \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
-    % 论文标准缩进
-    \geometry{left=1.25in,right=1.25in,top=1in,bottom=1.5in}
+% 普通A4格式缩进
+% \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+% 论文标准缩进
+\geometry{left=1.25in,right=1.25in,top=1in,bottom=1.5in}
 %------------------------------------------------------------------------------%
 
 
 %----------------------------------必要库支持----------------------------------%
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{mathrsfs}
-\usepackage{bm}
+
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{layouts}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{clrscode}
 \usepackage{gensymb}
+\usepackage[final]{pdfpages}
 %------------------------------------------------------------------------------%
 
 
@@ -41,51 +38,58 @@
 
 %--------------------------------添加书签超链接--------------------------------%
 \usepackage[unicode=true,colorlinks=false,pdfborder={0 0 0}]{hyperref}
-    % 在此处修改打开文件操作
-    \hypersetup{
-        bookmarks=true,         % show bookmarks bar?
-        pdftoolbar=true,        % show Acrobat’s toolbar?
-        pdfmenubar=true,        % show Acrobat’s menu?
-        pdffitwindow=true,      % window fit to page when opened
-        pdfstartview={FitH},    % fits the width of the page to the window
-        pdfnewwindow=true,      % links in new PDF window
-    }
-    % 在此处添加文章基础信息
-    \hypersetup{
-        pdftitle={title},
-        pdfauthor={author},
-        pdfsubject={subject},
-        pdfcreator={creator},
-        pdfproducer={producer},
-        pdfkeywords={key1  key2  key3}
-    }
+% 在此处修改打开文件操作
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,      % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new PDF window
+}
+% 在此处添加文章基础信息
+\hypersetup{
+    pdftitle={title},
+    pdfauthor={author},
+    pdfsubject={subject},
+    pdfcreator={creator},
+    pdfproducer={producer},
+    pdfkeywords={key1  key2  key3}
+}
 %------------------------------------------------------------------------------%
 
 
 %---------------------------------设置字体大小---------------------------------%
 \usepackage{type1cm}
 % 字号与行距，统一前缀s(a.k.a size)
-\newcommand{\sChuhao}{\fontsize{42pt}{63pt}\selectfont}         % 初号, 1.5倍
-\newcommand{\sYihao}{\fontsize{26pt}{36pt}\selectfont}          % 一号, 1.4倍
-\newcommand{\sErhao}{\fontsize{22pt}{28pt}\selectfont}          % 二号, 1.25倍
-\newcommand{\sXiaoer}{\fontsize{18pt}{18pt}\selectfont}         % 小二, 单倍
-\newcommand{\sSanhao}{\fontsize{16pt}{24pt}\selectfont}         % 三号, 1.5倍
-\newcommand{\sXiaosan}{\fontsize{15pt}{22pt}\selectfont}        % 小三, 1.5倍
-\newcommand{\sSihao}{\fontsize{14pt}{21pt}\selectfont}          % 四号, 1.5倍
-\newcommand{\sHalfXiaosi}{\fontsize{13pt}{16.25pt}\selectfont}  % 半小四, 1倍
-\newcommand{\sXiaosi}{\fontsize{12pt}{14.4pt}\selectfont}       % 小四, 1.25倍
-\newcommand{\sLargeWuhao}{\fontsize{11pt}{11pt}\selectfont}     % 大五, 单倍
-\newcommand{\sWuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}      % 五号, 单倍
-\newcommand{\sXiaowu}{\fontsize{9pt}{9pt}\selectfont}           % 小五, 单倍
+\newcommand{\sChuhao}{\fontsize{42pt}{63pt}\selectfont}         		% 初号, 1.5倍
+\newcommand{\sYihao}{\fontsize{26pt}{36pt}\selectfont}          		% 一号, 1.4倍
+\newcommand{\sErhao}{\fontsize{22pt}{28pt}\selectfont}          		% 二号, 1.25倍
+\newcommand{\sXiaoer}{\fontsize{18pt}{18pt}\selectfont}         		% 小二, 单倍
+\newcommand{\sSanhao}{\fontsize{16pt}{24pt}\selectfont}         		% 三号, 1.5倍
+\newcommand{\sXiaosan}{\fontsize{15pt}{22pt}\selectfont}        		% 小三, 1.5倍
+\newcommand{\sSihao}{\fontsize{14pt}{21pt}\selectfont}          		% 四号, 1.5倍
+\newcommand{\sSHalfXiaosi}{\fontsize{13pt}{19pt}\selectfont}  			% 半小四, 1.5倍
+\newcommand{\sHalfXiaosi}{\fontsize{13pt}{16.25pt}\selectfont}  		% 半小四, 1.25倍
+\newcommand{\sRealHalfXiaosi}{\fontsize{12.5pt}{16.25pt}\selectfont}  	% 模板中的半小四, 1.25倍
+\newcommand{\sXiaosi}{\fontsize{12pt}{14.4pt}\selectfont}       		% 小四, 1.25倍
+\newcommand{\sLargeWuhao}{\fontsize{11pt}{11pt}\selectfont}     		% 大五, 单倍
+\newcommand{\sWuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}      		% 五号, 单倍
+\newcommand{\sXiaowu}{\fontsize{9pt}{9pt}\selectfont}           		% 小五, 单倍
 %------------------------------------------------------------------------------%
 
 
 %---------------------------------设置中文字体---------------------------------%
 \usepackage{fontspec}
+<<<<<<< HEAD:settings/thesis-setting.tex
+%\usepackage[SlantFont,BoldFont,CJKchecksingle,CJKnumber]{xeCJK}
+\usepackage[SlantFont,BoldFont,CJKchecksingle]{xeCJK}
+=======
 %xeCJK warning: "option-deprecated" 
 %The `CJKnumber' option is deprecated.
 \usepackage[SlantFont,BoldFont,CJKchecksingle,CJKnumber]{xeCJK}
 \usepackage{CJKnumb}
+>>>>>>> master:common files/thesis-setting.tex
 % 使用 Adobe 字体
 \newcommand\adobeSog{Adobe Song Std}
 \newcommand\adobeHei{Adobe Heiti Std}
@@ -145,7 +149,7 @@
 
 
 %--------------------------------设置定理类环境--------------------------------%
-\usepackage[amsmath,thmmarks]{ntheorem}
+\usepackage[amsthm,thmmarks]{ntheorem}
 \newtheorem{myexample}{例}
 \newtheorem{thm}{定理}
 %------------------------------------------------------------------------------%
@@ -165,7 +169,7 @@
 %----------------------------设置段落标题与目录格式----------------------------%
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
-
+\usepackage{CJKnumb}
 
 % 正文中标题格式，毋需标号
 % \titleformat{\section}[hang]{\fHei \sf \sSihao}
@@ -177,7 +181,10 @@
 % 正文中标题格式，需要标号
 
 \newcommand\chapterID[1]{第\CJKnumber{#1}章}
-\renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
+\renewcommand{\chaptername}{第~\CJKnumber{\thechapter}~章}
+%\newcommand\chapterID[1]{第\zhnumber{#1}章}
+%\renewcommand{\chaptername}{第~\zhnumber{\thechapter}~章}
+%\renewcommand{\chaptername}{第 \thechapter 章}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
 \renewcommand{\bibname}{参考文献}
@@ -186,13 +193,15 @@
 
 
 \titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\bf}%
-    {\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
-\titleformat{\section}[hang]{\fHei \bf \sSihao}%
-    {\sSihao \thesection}{0.5em}{}{}
-\titleformat{\subsection}[hang]{\fHei \bf \sHalfXiaosi}%
-    {\sHalfXiaosi \thesubsection}{0.5em}{}{}
-\titleformat{\subsubsection}[hang]{\fHei \bf}%
-    {\thesubsubsection }{0.5em}{}{}
+{\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
+\titleformat{\section}[hang]{\fHei \bf \sXiaosan}%
+{\sXiaosan \thesection}{0.5em}{}{}
+\titleformat{\subsection}[hang]{\fHei \bf \sSHalfXiaosi}%
+{\sSHalfXiaosi \thesubsection}{0.5em}{}{}
+%\titleformat{\subsubsection}[hang]{\fHei \bf}%		%普通的subsubsection:1.2.3.4 标题
+%    {\thesubsubsection }{0.5em}{}{}
+\titleformat{\subsubsection}[hang]{\fHei \bf}		%小标题式的subsubsection:(4) 标题
+{(\arabic{subsubsection})}{0.5em}{}{}
 
 
 % 缩小正文中各级标题之间的缩进
@@ -207,12 +216,11 @@
 \dottedcontents{subsection}[2.00cm]{}{2.7em}{5pt}
 \dottedcontents{subsubsection}[2.86cm]{}{3.4em}{5pt}
 \titlecontents{chapter}[0pt]{\fHei\vspace{0.5em}}%
-    {\contentsmargin{0pt}\fHei\makebox[0pt][l]{\chapterID{\thecontentslabel}}\hspace{3.8em}}%
-    {\contentsmargin{0pt}\fHei}%
-    {\titlerule*[.5pc]{.}\contentspage}[\vspace{0em}]
-
-
+{\contentsmargin{0pt}\fHei\makebox[0pt][l]{\chapterID{\thecontentslabel}}\hspace{3.8em}}%
+{\contentsmargin{0pt}\fHei}%
+{\titlerule*[.5pc]{.}\contentspage}[\vspace{0em}]
 %------------------------------------------------------------------------------%
+
 
 %---------------------------------设置页眉页脚---------------------------------%
 \usepackage{fancyhdr}
@@ -227,83 +235,17 @@
 \makeatletter
 \renewcommand{\headrule}{%
     {
-        \if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
-        \makeheadrule
-    }
+            \if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+            \makeheadrule
+        }
 }
 \pagestyle{fancyplain}
 \fancyhf{}
 \fancyfoot[C,C]{\sWuhao-~\thepage~-}
 % 后续文字可以自行修改
-\chead{\sSanhao\raisebox{0.04cm}{\fNWPU 西北工业大学} \fSong {\bf 本科毕业设计论文}}
+\chead{\sSanhao\raisebox{0.04cm}{　\fNWPU 西北工业大学} \fSong{{\textbf{本科毕业设计论文}　}}}
 %------------------------------------------------------------------------------%
 
-
-%-------------------------------数学符号格式控制-------------------------------%
-\usepackage{bm}
-\def\mathbi#1{\textbf{\em #1}}
-% Caligraphic letters:      \mathcal{A}
-% Mathbb letters:           \mathbb{A}
-% Mathfrak letters:         \mathfrak{A}
-% Math Sans serif letters:  \mathsf{A}
-% MAth bold letters:        \mathbf{A}
-% Math bold italic letters: \mathbi{A}
-%------------------------------------------------------------------------------%
-
-
-%-------------------------------数学特殊符号控制-------------------------------%
-\newcommand\mi{{\mathrm i}}             % constant i
-\newcommand\me{{\mathrm e}}             % constant e
-\newcommand\mreal{{\mathbb R}}          % constant real set R
-\newcommand\mhilb{{\mathbb H}}          % constant hilbert set H
-\newcommand\mcond{{\mathrm{Cond.}}}     % condition symbol
-\newcommand\mconst{{\mathrm{const}}}    % constant symbol
-\newcommand\mve{{\bm e}}                % vector e
-\newcommand\mvu{{\bm u}}                % vector u
-\newcommand\mvv{{\bm v}}                % vector v
-\newcommand\mvw{{\bm w}}                % vector w
-\newcommand\mvx{{\bm x}}                % vector x
-\newcommand\mvy{{\bm y}}                % vector y
-\newcommand\mvz{{\bm z}}                % vector z
-\newcommand\mvzero{{\bm 0}}             % vector 0
-\newcommand\mvone{{\bm 1}}              % vector 1
-\newcommand\mvalpha{{\bm \alpha}}       % vector alpha
-\newcommand\mvomega{{\bm \omega}}       % vector omega
-\newcommand\mma{{\mathbf A}}            % matrix A
-\newcommand\mmb{{\mathbf B}}            % matrix B
-\newcommand\mmd{{\mathbf D}}            % matrix D
-\newcommand\mmh{{\mathbf H}}            % matrix H
-\newcommand\mmi{{\mathbf I}}            % matrix I
-\newcommand\mmk{{\mathbf K}}            % matrix K
-\newcommand\mml{{\mathbf L}}            % matrix L
-\newcommand\mmo{{\mathbf O}}            % matrix O
-\newcommand\mmp{{\mathbf P}}            % matrix P
-\newcommand\mms{{\mathbf S}}            % matrix S
-\newcommand\mmt{{\mathbf T}}            % matrix T
-\newcommand\mmtt{{{\mathbf T}^T}}       % matrix T^T
-\newcommand\mmu{{\mathbf U}}            % matrix U
-\newcommand\mmv{{\mathbf V}}            % matrix V
-\newcommand\mmw{{\mathbf W}}            % matrix W
-\newcommand\mmx{{\mathbf X}}            % matrix X
-\newcommand\mmy{{\mathbf Y}}            % matrix Y
-\newcommand\mmz{{\mathbf Z}}            % matrix Z
-\newcommand\mmlambda{{\bm \Lambda}}     % matrix \Lambda
-\newcommand\mf{{\mathcal{F}}}           % mathcal F
-\newcommand\mr{{\mathcal{R}}}           % mathcal R
-\DeclareMathOperator\diff{d\!}          % operator diff
-\DeclareMathOperator\Diff{D\!}          % operator Diff
-\DeclareMathOperator\Expect{E}          % operator Expect
-\DeclareMathOperator\diag{diag}         % operator diag
-\DeclareMathOperator\eig{eig}           % operator eig
-\DeclareMathOperator\lcm{lcm}           % operator lcm
-\DeclareMathOperator\tr{tr}             % operator tr
-\DeclareMathOperator\var{var}           % operator var
-\DeclareMathOperator\cov{cov}           % operator cov
-\DeclareMathOperator\mean{mean}         % operator mean
-\DeclareMathOperator*{\argmin}{argmin}  % operator argmin
-\DeclareMathOperator{\dist}{dist}       % operator dist
-\allowdisplaybreaks[4]
-%------------------------------------------------------------------------------%
 
 %----------------------------------其他补充设置--------------------------------%
 % 重置列表环境的间隔
