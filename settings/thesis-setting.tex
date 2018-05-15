@@ -11,19 +11,15 @@
 
 %---------------------------------纸张大小设置---------------------------------%
 \usepackage{geometry}
-    % 普通A4格式缩进
-    % \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
-    % 论文标准缩进
-    \geometry{left=1.25in,right=1.25in,top=1in,bottom=1.5in}
+% 普通A4格式缩进
+% \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+% 论文标准缩进
+\geometry{left=1.25in,right=1.25in,top=1in,bottom=1.5in}
 %------------------------------------------------------------------------------%
 
 
 %----------------------------------必要库支持----------------------------------%
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{mathrsfs}
-\usepackage{bm}
+
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{layouts}
@@ -42,24 +38,24 @@
 
 %--------------------------------添加书签超链接--------------------------------%
 \usepackage[unicode=true,colorlinks=false,pdfborder={0 0 0}]{hyperref}
-    % 在此处修改打开文件操作
-    \hypersetup{
-        bookmarks=true,         % show bookmarks bar?
-        pdftoolbar=true,        % show Acrobat’s toolbar?
-        pdfmenubar=true,        % show Acrobat’s menu?
-        pdffitwindow=true,      % window fit to page when opened
-        pdfstartview={FitH},    % fits the width of the page to the window
-        pdfnewwindow=true,      % links in new PDF window
-    }
-    % 在此处添加文章基础信息
-    \hypersetup{
-        pdftitle={title},
-        pdfauthor={author},
-        pdfsubject={subject},
-        pdfcreator={creator},
-        pdfproducer={producer},
-        pdfkeywords={key1  key2  key3}
-    }
+% 在此处修改打开文件操作
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,      % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new PDF window
+}
+% 在此处添加文章基础信息
+\hypersetup{
+    pdftitle={title},
+    pdfauthor={author},
+    pdfsubject={subject},
+    pdfcreator={creator},
+    pdfproducer={producer},
+    pdfkeywords={key1  key2  key3}
+}
 %------------------------------------------------------------------------------%
 
 
@@ -146,7 +142,7 @@
 
 
 %--------------------------------设置定理类环境--------------------------------%
-\usepackage[amsmath,thmmarks]{ntheorem}
+\usepackage[amsthm,thmmarks]{ntheorem}
 \newtheorem{myexample}{例}
 \newtheorem{thm}{定理}
 %------------------------------------------------------------------------------%
@@ -167,7 +163,6 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 \usepackage{CJKnumb}
-
 
 % 正文中标题格式，毋需标号
 % \titleformat{\section}[hang]{\fHei \sf \sSihao}
@@ -191,15 +186,15 @@
 
 
 \titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\bf}%
-    {\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
+{\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
 \titleformat{\section}[hang]{\fHei \bf \sXiaosan}%
-    {\sXiaosan \thesection}{0.5em}{}{}
+{\sXiaosan \thesection}{0.5em}{}{}
 \titleformat{\subsection}[hang]{\fHei \bf \sSHalfXiaosi}%
-    {\sSHalfXiaosi \thesubsection}{0.5em}{}{}
+{\sSHalfXiaosi \thesubsection}{0.5em}{}{}
 %\titleformat{\subsubsection}[hang]{\fHei \bf}%		%普通的subsubsection:1.2.3.4 标题
 %    {\thesubsubsection }{0.5em}{}{}
 \titleformat{\subsubsection}[hang]{\fHei \bf}		%小标题式的subsubsection:(4) 标题
-    {(\arabic{subsubsection})}{0.5em}{}{}
+{(\arabic{subsubsection})}{0.5em}{}{}
 
 
 % 缩小正文中各级标题之间的缩进
@@ -214,12 +209,11 @@
 \dottedcontents{subsection}[2.00cm]{}{2.7em}{5pt}
 \dottedcontents{subsubsection}[2.86cm]{}{3.4em}{5pt}
 \titlecontents{chapter}[0pt]{\fHei\vspace{0.5em}}%
-    {\contentsmargin{0pt}\fHei\makebox[0pt][l]{\chapterID{\thecontentslabel}}\hspace{3.8em}}%
-    {\contentsmargin{0pt}\fHei}%
-    {\titlerule*[.5pc]{.}\contentspage}[\vspace{0em}]
-
-
+{\contentsmargin{0pt}\fHei\makebox[0pt][l]{\chapterID{\thecontentslabel}}\hspace{3.8em}}%
+{\contentsmargin{0pt}\fHei}%
+{\titlerule*[.5pc]{.}\contentspage}[\vspace{0em}]
 %------------------------------------------------------------------------------%
+
 
 %---------------------------------设置页眉页脚---------------------------------%
 \usepackage{fancyhdr}
@@ -234,26 +228,15 @@
 \makeatletter
 \renewcommand{\headrule}{%
     {
-        \if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
-        \makeheadrule
-    }
+            \if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+            \makeheadrule
+        }
 }
 \pagestyle{fancyplain}
 \fancyhf{}
 \fancyfoot[C,C]{\sWuhao-~\thepage~-}
 % 后续文字可以自行修改
 \chead{\sSanhao\raisebox{0.04cm}{　\fNWPU 西北工业大学} \fSong{{\textbf{本科毕业设计论文}　}}}
-%------------------------------------------------------------------------------%
-
-
-%-------------------------------数学符号格式控制-------------------------------%
-\def\mathbi#1{\textbf{\em #1}}
-% Caligraphic letters:      \mathcal{A}
-% Mathbb letters:           \mathbb{A}
-% Mathfrak letters:         \mathfrak{A}
-% Math Sans serif letters:  \mathsf{A}
-% MAth bold letters:        \mathbf{A}
-% Math bold italic letters: \mathbi{A}
 %------------------------------------------------------------------------------%
 
 

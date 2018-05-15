@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper,openany,oneside]{book}
 
+% 格式控制
 \input{settings/thesis-setting}
 
-%插件
-\input{settings/math}
-\input{settings/aerocoeffs}
+% 非格式控制插件
+\usepackage{plug-ins/math-symbols}
+\input{plug-ins/aerocoeffs}
 
 % 仅用于测试
 \usepackage{blindtext}
@@ -21,7 +22,7 @@
 
 % 封皮
 \frontmatter
-\input{cover.tex}
+\input{settings/cover.tex}
 \clearpage
 \thispagestyle{empty}
 \phantom{s}
@@ -47,23 +48,26 @@
 \addcontentsline{toc}{chapter}{\fHei 目录}
 \tableofcontents
 \clearpage
+
 \mainmatter
 
 \renewcommand{\baselinestretch}{1.0}
-
 \sRealHalfXiaosi\fSong
 
 % 正文内容
 \input{chapters/chapter01.tex}
 \input{chapters/chapter02.tex}
 \input{chapters/chapter03.tex}
+
 % 参考文献设置
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{\fHei 参考文献}
 \sWuhao
+
 % npu专用
-\bibliographystyle{nputhesis}
+\bibliographystyle{settings/nputhesis}
+
 % 参考文献位置
 \bibliography{references/reference}
 

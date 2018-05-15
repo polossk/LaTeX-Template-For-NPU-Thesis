@@ -1,0 +1,46 @@
+\chapter{萌新教程}
+\section{这是中标题}
+emmmm
+\subsection{这是小标题}
+emmmmm
+\subsubsection{这是小小标题}
+搞这么多层大丈夫?
+
+\section{表格}
+
+使用 \href{http://www.tablesgenerator.com/}{http://www.tablesgenerator.com/} 生成, 可粘贴Excel.
+
+\begin{table}[!h]
+    \centering
+    \caption{My caption}
+    \label{my-label}
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+        $A$ & $B$ & $A+B$ & $A\times B$ \\ \midrule
+        1   & 6   & 7     & 6           \\
+        2   & 7   & 9     & 14          \\
+        3   & 8   & 11    & 24          \\
+        4   & 9   & 13    & 36          \\
+        5   & 10  & 15    & 50          \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{特殊符号}
+
+用 \href{http://detexify.kirelabs.org/classify.html}{http://detexify.kirelabs.org/classify.html}
+画出来.
+
+\section{参考文献的引用}
+
+\LaTeX{} 中要求参考文献使用 \lstinline`\cite` 进行参考引用, 但是由于论文要求中说明需在
+文字的右上角注明引用, 所以请使用预定义好的命令 \lstinline`\ucite` 进行参考引用. 比如本论
+文模板 `LaTeX-Template-For-NPU-Thesis' \ucite{NWPUThesisLaTeXTemplate} 要求务必
+声明引用, 同时预配置了插件 `math-symbols' \ucite{MathSymbolsinLaTeXbypolossk}. 对
+组件的引用是每一名科学工作者的基本素养（一本正经）. 对于需要引用但是并不需要明确指明引用位置
+的文献, 请使用 \lstinline`\nocite` 命令.
+
+在此同时感谢真正的 dalao 高德纳开发了全世界版本号最接近 $\pi$ 的软件 \LaTeX{}
+\ucite{knuth1986the}\nocite{lamport1989latex:}.
+
+
+\endinput
