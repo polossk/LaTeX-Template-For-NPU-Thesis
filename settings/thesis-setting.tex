@@ -83,8 +83,8 @@
 
 %---------------------------------设置中文字体---------------------------------%
 \usepackage{fontspec}
-%\usepackage[SlantFont,BoldFont,CJKchecksingle,CJKnumber]{xeCJK}
 \usepackage[SlantFont,BoldFont,CJKchecksingle]{xeCJK}
+\usepackage{CJKnumb}
 % 使用 Adobe 字体
 \newcommand\adobeSog{Adobe Song Std}
 \newcommand\adobeHei{Adobe Heiti Std}
@@ -167,7 +167,6 @@
 %----------------------------设置段落标题与目录格式----------------------------%
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
-\usepackage{CJKnumb}
 
 \newcommand\chapterID[1]{第\CJKnumber{#1}章}
 \renewcommand{\chaptername}{第~\CJKnumber{\thechapter}~章}
