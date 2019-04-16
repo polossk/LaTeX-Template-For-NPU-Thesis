@@ -23,6 +23,8 @@
 * 额外制作了西北工业大学的标题的特殊字体 `nwpuname.ttf`
 * 如有任何问题，请发[issue](https://github.com/NWPUMetaphysicsOffice/LaTeX-Template-For-NPU-Thesis/issues/new)
 * 基于[MIT-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
+* Windows下请将字体放入`C:\Windows\Fonts`下，或者选择“为所有用户安装”以确保字体文件存在于上述文件夹
+* Adobe字体：https://github.com/dolbydu/font/tree/master/unicode
 
 ## BibTeX
 
