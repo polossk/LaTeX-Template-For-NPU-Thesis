@@ -145,22 +145,28 @@ FUNCTION {bbl.slash} { "//\allowbreak " }
 
 FUNCTION {bbl.sine.loco}
 { entry.lang lang.zh =
-    { "[出版地不详]" }
-    { "[S.l.]" }
+    { "" }
+    { "" }
+    % { "[出版地不详]" }
+    % { "[S.l.]" }
   if$
 }
 
 FUNCTION {bbl.sine.nomine}
 { entry.lang lang.zh =
-    { "[出版者不详]" }
-    { "[s.n.]" }
+    { "" }
+    { "" }
+    % { "[出版者不详]" }
+    % { "[s.n.]" }
   if$
 }
 
 FUNCTION {bbl.sine.loco.sine.nomine}
 { entry.lang lang.zh =
-    { "[出版地不详: 出版者不详]" }
-    { "[S.l.: s.n.]" }
+    { "" }
+    { "" }
+    % { "[出版地不详: 出版者不详]" }
+    % { "[S.l.: s.n.]" }
   if$
 }
 
@@ -475,10 +481,10 @@ FUNCTION {format.names}
             { t get.str.lang 'name.lang :=
               name.lang lang.en =
                 { t #1 "{vv~}{ll}{~f{~}}" format.name$
-                  uppercase.name
-                    { "u" change.case$ }
-                    'skip$
-                  if$
+                  % uppercase.name
+                  %   { "u" change.case$ }
+                  %   'skip$
+                  % if$
                   t #1 "{, jj}" format.name$ *
                 }
                 { t #1 "{ll}{ff}" format.name$ }
@@ -953,9 +959,9 @@ FUNCTION {format.address.publisher}
 { address empty$ not
     { address
       format.publisher empty$ not
-        { bbl.colon * format.publisher * }
+        { format.publisher * }
         { entry.is.electronic not show.missing.address.publisher and
-            { bbl.colon * bbl.sine.nomine * }
+            { bbl.sine.nomine * }
             'skip$
           if$
         }
@@ -963,7 +969,7 @@ FUNCTION {format.address.publisher}
     }
     { entry.is.electronic not show.missing.address.publisher and
         { format.publisher empty$ not
-            { bbl.sine.loco bbl.colon * format.publisher * }
+            { bbl.sine.loco format.publisher * }
             { bbl.sine.loco.sine.nomine }
           if$
         }

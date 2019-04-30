@@ -1,9 +1,15 @@
 # LaTeX Template For NPU thesis
 
-![Platfrom](https://img.shields.io/badge/Platfrom-TeXLive2016-3D6117.svg)
+![TeX-Document](https://img.shields.io/badge/TeX-Document-3D6117.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
-![Version](https://img.shields.io/badge/version-v1.4.0-alpha-674EA7.svg)
+![Version](https://img.shields.io/badge/version-v1.4.1.0430-674EA7.svg)
+
+| TeXLive Environment                                                  | Status             |
+| -------------------------------------------------------------------- | ------------------ |
+| ![TeXLive2016](https://img.shields.io/badge/TeXLive-2016-3D6117.svg) | :heavy_check_mark: |
+| ![TeXLive2017](https://img.shields.io/badge/TeXLive-2017-3D6117.svg) | :heavy_check_mark: |
+| ![TeXLive2018](https://img.shields.io/badge/TeXLive-2018-3D6117.svg) | :heavy_check_mark: |
 
 ## Usage
 
@@ -15,21 +21,22 @@
 
 ## Note
 
-* 本模板使用的是Adobe字体(宋体，黑体，楷体，仿宋)，需要另行购买或下载
+* 本模板使用的是 **Adobe** 字体(宋体，黑体，楷体，仿宋)，需要另行购买或下载
 * `cover.tex` 文件为论文的封面页, `translation-cover` 为本科毕业设计的文献翻译封面页
 * 所有字体大小的控制命令统一前缀为`s(a.k.a size)`, 所有字体格式的控制命令统一前缀为`f(a.k.a font)`
-* `makefile` 中的 `close` 选项为 `windows` 专用, 并且假设使用了 `Acrobat` 打开了当前 pdf 文件
+* `makefile` 中的 `close`, `clean` 以及 `wipe` 选项为 `windows` 专用, 并且假设使用了 `Acrobat` 打开了当前 pdf 文件
 * 校徽用`tikz`生成矢量图形 `logo.tex`
 * 额外制作了西北工业大学的标题的特殊字体 `nwpuname.ttf`
 * 如有任何问题，请发[issue](https://github.com/NWPUMetaphysicsOffice/LaTeX-Template-For-NPU-Thesis/issues/new)
 * 基于[MIT-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
+* 在编译过程中，如果遇到卡在字体缓冲问题，请先关闭当前进程，并用管理员模式打开命令提示符（或终端），键入 `fc-cache -f -v` 强制刷新字体缓存即可
 
 ## BibTeX
 
 ```bibtex
 @misc{NWPUThesisLaTeXTemplate,
     title={{{\LaTeX}}-Template-For-NPU-Thesis},
-    author={Shangkun Shen and Zhihe Wang},
+    author={Shangkun Shen and Zhihe Wang and Weijia Zhang},
     year={2016},
     month={05}
 }
