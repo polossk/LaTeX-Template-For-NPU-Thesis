@@ -1,7 +1,7 @@
 # LaTeX Template For NPU thesis
 
 ![TeX-Document](https://img.shields.io/badge/TeX-Document-3D6117.svg)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-GNU_General_Public_License_v3.0-blue.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
 ![Version](https://img.shields.io/badge/version-v1.4.1.0430-674EA7.svg)
 
@@ -28,9 +28,9 @@
 * 校徽用`tikz`生成矢量图形 `logo.tex`
 * 额外制作了西北工业大学的标题的特殊字体 `nwpuname.ttf`
 * 如有任何问题，请发[issue](https://github.com/NWPUMetaphysicsOffice/LaTeX-Template-For-NPU-Thesis/issues/new)
-* 基于[MIT-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
+* 基于[GPLv3-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
 * 在编译过程中，如果遇到卡在字体缓冲问题，请先关闭当前进程，并用管理员模式打开命令提示符（或终端），键入 `fc-cache -f -v` 强制刷新字体缓存即可
-* Windows 下请将字体放入 `C:\Windows\Fonts` 下，或者选择“为所有用户安装”以确保字体文件存在于上述文件夹
+* Windows 下请将字体放入 `C:\Windows\Fonts` 下，并选择“为所有用户安装”以确保字体文件正确安装
 * Adobe 字体：<https://github.com/dolbydu/font/tree/master/unicode>
 
 ## BibTeX
@@ -52,23 +52,6 @@ be very generous of you!
 
 ## License
 
-The MIT License (MIT)
 Copyright (c) 2016 NWPU Metaphysics Office <https://github.com/NWPUMetaphysicsOffice>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the “Software”), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+This repo is under the license of GNU General Public License v3.0. Go and check [license](LICENSE) for details.
