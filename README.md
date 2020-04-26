@@ -28,7 +28,7 @@
 * 校徽用`tikz`生成矢量图形 `logo.tex`
 * 额外制作了西北工业大学的标题的特殊字体 `nwpuname.ttf`
 * 如有任何问题，请发[issue](https://github.com/NWPUMetaphysicsOffice/LaTeX-Template-For-NPU-Thesis/issues/new)
-* 基于[MIT-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
+* 基于[GPLv3-LICENSE](LICENSE)，如有帮助，请在自己的文章中引用
 * 在编译过程中，如果遇到卡在字体缓冲问题，请先关闭当前进程，并用管理员模式打开命令提示符（或终端），键入 `fc-cache -f -v` 强制刷新字体缓存即可
 * Windows 下请将字体放入 `C:\Windows\Fonts` 下，或者选择“为所有用户安装”以确保字体文件存在于上述文件夹
 * Adobe 字体：<https://github.com/dolbydu/font/tree/master/unicode>
