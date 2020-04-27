@@ -18,7 +18,7 @@
 ## 使用说明
 
 1. 安装 `setting` 文件夹中的字体 `nwpuname.ttf`
-2. 直接对 `example.tex` 文件进行修改，对应的摘要、章节内容、附录文件均以默认生成，在此基础上加以修改即可
+2. 直接对 `example.tex` 文件进行修改，对应的摘要、章节内容、附录文件均已经默认生成，在此基础上加以修改即可
 3. 如有必要，也可以请仿照 `example.tex` 在 *导言区* 引用 `\input{settings/thesis-setting}` 来直接设置文档格式为本科毕业设计论文格式
 4. 如有必要，修改 `makefile` 文件的 `MAIN` 选项为自己 `tex` 文档的文件名
 5. make & Enjoy
