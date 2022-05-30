@@ -69,7 +69,7 @@ be very generous of you!
 
 Copyright (c) 2016-2020 *NWPU Metaphysics Office* <https://github.com/NWPUMetaphysicsOffice>
 
-This repo is under the license of **GNU General Public License v3.0**. Go 
+This repo is under the license of **GNU General Public License v3.0**. Go
 and check [license](LICENSE) for details.
 
 The association *NWPU Metaphysics Office* is a club-like student group. The
