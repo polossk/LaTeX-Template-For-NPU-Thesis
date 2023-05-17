@@ -959,7 +959,7 @@ FUNCTION {format.address.publisher}
 { address empty$ not
     { address
       format.publisher empty$ not
-        { format.publisher * }
+        { bbl.colon * format.publisher * }
         { entry.is.electronic not show.missing.address.publisher and
             { bbl.sine.nomine * }
             'skip$
